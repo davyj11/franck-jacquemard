@@ -5,6 +5,7 @@ namespace App\Blocks;
 use Adeliom\WP\Extensions\Blocks\AbstractBlock;
 use App\Admin\Utils\Helpers;
 use App\Enum\GutBlockName;
+use App\Helpers\Gutenberg\GutenbergBlockHelper;
 use WordPlate\Acf\Fields\Radio;
 use WordPlate\Acf\Fields\Tab;
 use WordPlate\Acf\Fields\Text;
@@ -25,7 +26,7 @@ class WysiwygBlock extends AbstractBlock
             'title'       => __('Texte centré'),
             'description' => __('Bloc de texte centré'),
             'category'    => GutBlockName::GENERIC,
-            'post_types'  => Helpers::commonsTemplate(),
+            'post_types'  => GutenbergBlockHelper::commonsTemplate(),
             'mode'           => 'edit'
         ]);
     }

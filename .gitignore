@@ -19,10 +19,12 @@ web/wp
 *.log
 
 # Dotenv
-!.env
+.env
 .env.*
 !.env.dist
 !.env.example
+install.lock
+.docker
 
 # Composer
 /vendor
