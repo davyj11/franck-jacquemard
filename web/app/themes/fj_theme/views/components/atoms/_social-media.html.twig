@@ -1,0 +1,16 @@
+{% macro _socialMedia(settings = {}) %}
+
+	{# Default Settings #}
+	{% set defaultSettings = {
+
+		'url' : null,
+		"icon" : null
+	} %}
+
+	{% set settings = defaultSettings|merge(settings) %}
+
+	<a href="{{ settings.url }}" class="group flex-center border rounded-full dark:border-gray-02 h-9 w-9 mr-2.5" target="_blank" rel="noreferrer">
+		<i class="icon icon-social-{{ settings.icon }} dark:text-white text-base group-hover:text-opacity-80 trans-default"></i>
+	</a>
+
+{% endmacro %}

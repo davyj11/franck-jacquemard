@@ -10,6 +10,15 @@
     <div class="card__text">
         <div class="inner">
             <h4 class="card__text__title h4">{{card.title}}</h4>
+            {% for cat in card.terms( {query:{taxonomy:'category'}}) %}
+                <div class="p--small">{{ cat.name }}</div>
+            {% endfor %}
+
+            <br><br><br>
+
+            {% for tag in card.terms( {query:{taxonomy:'tag'}}) %}
+                <div class="p">- {{ tag.name }}</div> <br>
+            {% endfor %}
         </div>
         <div class="card__text__btn">{{__(" Lire l'article", '') }}</div>
     </div>

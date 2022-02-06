@@ -1,0 +1,123 @@
+@import 'typography/heading.pcss';
+@import 'typography/text.pcss';
+@import 'typography/list.pcss';
+@import 'typography/specific.pcss';
+@import 'typography/wysiwyg.pcss';
+@import 'form/form.pcss';
+
+
+@layer utilities {
+
+    /************************************************
+                      TRANSITIONS
+     *************************************************/
+    .trans-default {
+        transition: all .25s ease-out;
+    }
+
+    /************************************************
+                     DECORATION
+    *************************************************/
+    .bevel {
+        position: absolute;
+        left: 0;
+        width: 0;
+        height: 0;
+        border-top-width: 30px;
+        border-right: 100vw solid transparent;
+        z-index: 10;
+        @screen md {
+            border-top-width: 44px;
+        }
+    }
+
+    .bevel--bottom {
+        bottom: 0;
+        transform: matrix(1, 0, 0, -1, 0, 0);
+    }
+
+    .bevel--top {
+        top: 0;
+    }
+
+    .bevel--increase {
+        transform: matrix(-1, 0, 0, 1, 0, 0);
+    }
+
+    /************************************************
+                    DISPLAY
+   *************************************************/
+    .flex-center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    /************************************************
+                   OFFSET CONTAINER
+    *************************************************/
+    .br-container {
+        margin-right: calc(((100vw - var(--width-container)) / -2) - var(--padding-container));
+    }
+
+
+    .bl-container {
+        margin-left: calc(((100vw - var(--width-container)) / -2) - var(--padding-container));
+    }
+
+
+    .br-container-padding {
+        margin-right: calc(((100vw - var(--width-container)) / -2) - var(--padding-container));
+        padding-right: calc(((100vw - var(--width-container)) / 2) + var(--padding-container));
+    }
+
+    .bl-container-padding {
+        margin-left: calc(((100vw - var(--width-container)) / -2) - var(--padding-container));
+        padding-left: calc(((100vw - var(--width-container)) / 2) + var(--padding-container));
+    }
+
+    .bx-container {
+        margin-right: calc(((100vw - var(--width-container)) / -2) - var(--padding-container));
+        margin-left: calc(((100vw - var(--width-container)) / -2) - var(--padding-container));
+    }
+
+    .bx-container-padding {
+        margin-right: calc(((100vw - var(--width-container)) / -2) - var(--padding-container));
+        padding-right: calc(((100vw - var(--width-container)) / 2) + var(--padding-container));
+        margin-left: calc(((100vw - var(--width-container)) / -2) - var(--padding-container));
+        padding-left: calc(((100vw - var(--width-container)) / 2) + var(--padding-container));
+    }
+
+    /************************************************
+                  POSITION
+   *************************************************/
+    .absolute-center{
+        @apply absolute inset-y-2/4 inset-x-2/4 -translate-x-1/2 -translate-y-1/2;
+    }
+
+    .absolute-full {
+        @apply absolute;
+        @apply inset-0;
+    }
+
+    .fixed-full {
+        @apply fixed;
+        @apply inset-0;
+    }
+
+    .cover-full {
+        @apply absolute;
+        @apply inset-0;
+        @apply object-cover;
+    }
+
+    .contain-full {
+        @apply absolute;
+        @apply inset-0;
+        @apply object-contain;
+    }
+
+
+
+}

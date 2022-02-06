@@ -12,7 +12,9 @@
 
     {{ function('wp_head') }}
 
-    {% block stylesheet %}{% endblock %}
+    {% block stylesheet %}
+        {{ encore_entry_link_tags('tailwind') }}
+    {% endblock %}
 
     {#<script>
         var GMAPS_API_KEY = "{{ config['gmap'] }}";
@@ -39,7 +41,9 @@
 
     {{ function('wp_footer') }}
 
-    {% block javascript %}{% endblock %}
+    {% block javascript %}
+    {{ encore_entry_script_tags('tailwind') }}
+    {% endblock %}
 
 </div>
 

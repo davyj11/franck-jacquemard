@@ -1,0 +1,11 @@
+{% from 'components/button/button.html.twig' import _button %}
+
+{% if btn %}
+	{{ _button({
+		label: btn.title,
+		url : btn.url,
+		target : btn.target,
+		variant : "outline",
+		className : class
+	}) }}
+{% endif %}

@@ -1,0 +1,56 @@
+@layer components {
+    .h1, .h2, .h3, .h4, .h5, .h6 {
+        @apply tracking-[-0.04em];
+        @apply font-text;
+        @apply font-semibold;
+        @apply text-primary-black;
+        @apply dark:text-white;
+    }
+
+    .h1 {
+        @apply text-[41px] md:text-[56px] lg:text-[70px];
+        @apply leading-[45px] md:leading-[66px] lg:leading-[80px];
+
+        .italic-font{
+            @apply text-[50px] md:text-[70px] lg:text-[77px];
+        }
+    }
+
+    .h2 {
+        @apply text-[28px] md:text-[38px] lg:text-[46px];
+        @apply leading-[34px] md:leading-[46px] lg:leading-[55px];
+    }
+
+    .h3 {
+        @apply text-[24px] md:text-[30px] lg:text-[36px];
+        @apply leading-[29px] md:leading-[36px] lg:leading-[44px];
+        .italic-font{
+            @apply lg:text-[56px];
+        }
+    }
+
+    .h4 {
+        @apply text-[20px] md:text-[24px];
+        @apply leading-[24] md:leading-[29px];
+    }
+
+    .h5 {
+        @apply text-[20px];
+        @apply leading-[24px];
+
+        .highlight{
+            &:before{
+                width: calc(100% + 3px);
+            }
+        }
+    }
+
+    .headline {
+        @apply text-[12px] lg:text-[13px];
+        @apply uppercase;
+        @apply font-semibold;
+        @apply tracking-[0.06em];
+        @apply dark:text-white;
+    }
+
+}

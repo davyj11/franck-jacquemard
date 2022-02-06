@@ -1,0 +1,12 @@
+
+<article class="card card--img-text" style="max-width:300px;" {{ card.slug ? "js-select-profile" : ""  }} data-profile="{{ card.slug }}">
+    <div class="card__image">
+        <img src="{{ card.picto.url }}" alt="">
+    </div>
+    <div class="card__text">
+        <div class="inner">
+            <h4 class="card__text__title h4">{{card.title}}</h4>
+        </div>
+    </div>
+    <a href="{{ card.link.url }}" class="full-link"></a>
+</article>

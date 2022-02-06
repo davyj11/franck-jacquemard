@@ -1,0 +1,54 @@
+{% macro _button(props = {}) %}
+	{% set baseProps = {
+		label: "En savoir plus",
+		tag: "a",
+		variant: "primary",
+		size: "large",
+		target: false,
+		title: false,
+		disabled: false,
+		url: false,
+		type: false,
+		id: false,
+		className: false
+	} %}
+
+	{% set classes = {
+		base: "btn text-base trans-default rounded-md inline-block transition ease-in-out duration-200",
+		disabled: {
+			primary: "bg-gray-03 text-gray-01 pointer-events-none",
+			outline: "bg-transparent border border-gray-02 text-gray-02 pointer-events-none"
+		},
+		size: {
+			normal: "px-6 py-2.5 text-[12px]",
+			large: "px-10 py-4 text-[15px]"
+		},
+		variant: {
+			primary: "bg-primary-black text-white hover:bg-gray-01 dark:bg-secondary-01",
+			outline: "border border-primary-black
+			dark:border-white dark:text-white hover:dark:border-gray-03 hover:dark:text-gray-03
+			hover:border-gray-01 hover:text-gray-01",
+			icon : "font-semibold text-[15] tracking-[-0.04em] hover:text-secondary-01 dark:text-white hover:dark:text-gray-03"
+
+		}
+	} %}
+
+	{% set props = baseProps|merge(props) %}
+
+
+	<{{ props.tag }}
+	class="{{ cls("#{props.className} #{classes.base} #{props.disabled ? classes.disabled[props.variant] : classes.variant[props.variant]}  #{props.variant != 'icon' ? classes.size[props.size] : '' }") }}"
+	title="{{ props.title ? props.title : props.label }}"
+	id="{{ props.id|default('') }}"
+	{% if props.disabled %}disabled{% endif %}
+	{% if props.url and props.tag == "a" %}href="{{ props.url }}"{% endif %}
+	{% if props.target and props.tag == "a" %}target="{{ props.target }}"{% endif %}
+	{% if props.type and props.tag == "button" %}type="{{ props.type }}"{% endif %}
+	>
+
+	{{ props.label }}
+
+	{% if props.icon %} <i class="{{ props.icon }} {{ props.iconPosition == "left" ? "mr-2" : "ml-4" }}"></i> {% endif %}
+	</{{ props.tag }}>
+
+{% endmacro %}

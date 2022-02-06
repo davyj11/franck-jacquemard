@@ -1,0 +1,44 @@
+/**
+ * Custom styles to immediately follow Tailwind’s `base` layer
+ *
+ * “Add things like base typography styles [or] opinionated global resets.”
+ *
+ * — from https://tailwindcss.com/docs/plugins#adding-base-styles
+ */
+
+
+@import "../../fonts/fonts.pcss";
+
+body{
+    overflow-x:hidden;
+}
+
+:root{
+    --padding-container: theme('container.padding.DEFAULT');
+    --width-container: 100vw;
+
+    @screen sm {
+        --padding-container: theme('container.padding.sm');
+        --width-container: theme('maxWidth.screen-sm');
+    }
+
+    @screen md {
+        --padding-container: theme('container.padding.md');
+        --width-container: theme('maxWidth.screen-md');
+    }
+
+    @screen lg {
+        --padding-container: theme('container.padding.lg');
+        --width-container: theme('maxWidth.screen-lg');
+    }
+
+    @screen xl {
+        --padding-container: theme('container.padding.xl');
+        --width-container: theme('maxWidth.screen-xl');
+    }
+
+    @screen 2xl {
+        --padding-container: theme('container.padding.2xl');
+        --width-container: theme('maxWidth.screen-2xl');
+    }
+}

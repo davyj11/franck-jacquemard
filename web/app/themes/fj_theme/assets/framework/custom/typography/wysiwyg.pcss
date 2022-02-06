@@ -1,0 +1,132 @@
+@layer components {
+    .wysiwyg{
+        &.big{
+            p{
+                @apply p-md;
+            }
+        }
+
+        & > *:last-child{
+            @apply mb-0;
+        }
+
+        p, ul, ol, table{
+            & + h2, + h3, +h4, + h5{
+                @apply mt-8;
+            }
+        }
+
+        h2{
+            & + h3, + h4, + h5{
+                @apply mt-2;
+            }
+        }
+        h3{
+            & + h2, + h4, + h5{
+                @apply mt-3;
+            }
+        }
+        h4{
+            & + h5, + h3, + h2{
+                @apply mt-2;
+            }
+        }
+        h5{
+            & + h4, + h3, + h2{
+                @apply mt-3;
+            }
+        }
+
+        h2, h3, h4, h5{
+            & + ul, + ol, + p, + table{
+                @apply mt-3 md:mt-5;
+            }
+        }
+
+        p{
+            & + ul, + ol, + table{
+                @apply mt-3;
+            }
+            & + p {
+                @apply mt-5;
+            }
+        }
+
+        ul{
+            & + ul, + ol{
+                @apply mt-3;
+            }
+            & + p{
+                @apply mt-5;
+            }
+        }
+
+        ol{
+            & + ol, + ul{
+                @apply mt-3;
+            }
+            & + p{
+                @apply mt-5;
+            }
+        }
+
+        p {
+            @apply p;
+        }
+
+        a {
+           /* @apply wysiwyg-link;*/
+        }
+
+        h1{
+            @apply h1;
+        }
+
+        h2 {
+            @apply h2;
+        }
+
+        h3 {
+            @apply h3;
+        }
+
+        h4 {
+            @apply h4;
+        }
+
+        h5 {
+            @apply h5;
+        }
+
+        ul{
+            @apply bullet-list;
+        }
+
+        ol{
+            @apply number-list;
+        }
+
+        hr{
+            @apply hidden;
+        }
+
+        iframe {
+            @apply mx-auto;
+        }
+
+        b{
+            @apply font-semibold;
+        }
+
+
+        .btn, & + .btn{
+            @apply mt-4 lg:mt-10;
+
+
+            &.btn-icon{
+                @apply  mt-6;
+            }
+        }
+
+    }
+}

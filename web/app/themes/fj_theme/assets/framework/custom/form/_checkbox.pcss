@@ -1,0 +1,25 @@
+
+.gform_wrapper.gravity-theme {
+    .ginput_container_consent,
+    .gchoice {
+        @apply flex items-center;
+        @apply cursor-pointer;
+
+        & + .gchoice {
+            @apply mt-2;
+        }
+
+        input[type="checkbox"] {
+            @apply w-6 h-6;
+            @apply mr-2.5;
+            @apply border border-gray-04;
+            @apply text-secondary-01;
+            @apply focus:ring-transparent;
+            @apply cursor-pointer;
+        }
+
+        label {
+            @apply p;
+        }
+    }
+}

@@ -1,0 +1,10 @@
+{% from 'components/button/button.html.twig' import _button %}
+
+{% if btn %}
+	{{ _button({
+		tag: "button",
+		label : btn.label,
+		id : "gform_submit_button_" ~ btn.id,
+		className : "mt-10 float-right"
+	}) }}
+{% endif %}

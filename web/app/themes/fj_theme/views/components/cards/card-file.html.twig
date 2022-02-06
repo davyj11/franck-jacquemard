@@ -1,0 +1,31 @@
+{% macro _cardFile(settings = {}) %}
+
+	{# Default Settings #}
+	{% set defaultSettings = {
+		'title' : "Document",
+		'doc' : null,
+	} %}
+
+	{% set settings = defaultSettings|merge(settings) %}
+
+	<div class="mb-6 last:mb-0">
+		<div class="group relative">
+			<div class="bg-white flex align-items justify-between relative z-10 p-6">
+				<div class="flex items-center">
+					<img src="{{ asset('/build/images/icons/doc.svg') }}" class="w-[58px]"/>
+					<div class="ml-4">
+						<p class="h5">{{ settings.title }}</p>
+						<p class="p font-semibold mt-2 text-gray-01 ">{{settings.doc.filesize|fileSize }}</p>
+					</div>
+				</div>
+
+				<i class="icon-download text-gray-01 text-xlg"></i>
+				<a href="{{ settings.doc.url}}" class="absolute inset-0 z-10" download></a>
+			</div>
+
+			{% include 'components/cards/includes/_shape-bg-hover.html.twig' %}
+
+		</div>
+	</div>
+
+{% endmacro %}

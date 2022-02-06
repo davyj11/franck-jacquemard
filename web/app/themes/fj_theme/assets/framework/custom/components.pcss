@@ -1,0 +1,83 @@
+@layer components {
+
+    /************************************************
+                     LISTES
+    *************************************************/
+    .bullet-list {
+        @apply list-disc;
+        @apply p-0;
+
+        li {
+            @apply p;
+            @apply ml-4;
+
+            &::marker {
+                font-family: var(--icomoon-font-family);
+                content: var(--icon-trait);
+                @apply text-secondary-01;
+                @apply mr-2;
+                @apply text-lg;
+            }
+
+            & + li {
+                @apply mt-4;
+            }
+        }
+    }
+
+    .number-list {
+        @apply list-decimal;
+        list-style-type: decimal-leading-zero;
+        @apply p-0;
+
+        li {
+            @apply p;
+            @apply ml-6;
+
+            &::marker {
+                @apply text-secondary-01;
+                @apply text-md;
+            }
+
+            & + li {
+                @apply mt-4;
+            }
+        }
+    }
+
+
+
+    /************************************************
+                     GRILLES
+    *************************************************/
+    .lg-grid-12{
+        @apply grid lg:grid-cols-12 gap-6;
+    }
+
+
+    /************************************************
+                     MARGES
+    *************************************************/
+    .p-default {
+        @apply py-10;
+        @apply md:py-16;
+        @apply lg:py-20;
+    }
+
+    .p-default-top{
+        @apply pt-10 md:pt-16 lg:py-20;
+    }
+
+    .p-bevel-bottom{
+        @apply p-default-top;
+        @apply pb-16 md:pb-24 lg:pb-16;
+    }
+
+    .p-bevel-top{
+        @apply lg:pt-[120px];
+
+    }
+
+}
+
+

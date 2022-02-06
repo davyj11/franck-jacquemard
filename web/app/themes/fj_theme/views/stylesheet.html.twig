@@ -3,241 +3,214 @@
 {% endblock %}
 
 
-
-<header class="stylesheet__header">
+<div class="bg-gray-09 py-8">
     <div class="container">
-        <div class="row">
-            <h1 class="h1">Stylesheet</h1>
+        <div class="flex items-center justify-center">
+            <h1 class="h1">StyleSheet</h1>
         </div>
     </div>
-</header>
 
-<section class="stylesheet__colors">
-    <div class="container">
-        <div class="row">
-            <div class="col-left">
-                <h2 class="h2">Colors</h2>
-                <ul class="stylesheet__colors__list">
-                    <li><span class="color-ex color-ex--primary-black"></span>$primary-black</li>
-                    <li><span class="color-ex color-ex--secondary-01"></span>$secondary-01</li>
-                    <li><span class="color-ex color-ex--secondary-02"></span>$secondary-02</li>
-                    <li><span class="color-ex color-ex--gray-01"></span>$gray-01</li>
-                    <li><span class="color-ex color-ex--gray-02"></span>$gray-02</li>
-                    <li><span class="color-ex color-ex--gray-03"></span>$gray-03</li>
-                    <li><span class="color-ex color-ex--gray-04"></span>$gray-04</li>
-                    <li><span class="color-ex color-ex--white"></span>$white</li>
-                    <li><span class="color-ex color-ex--black"></span>$black</li>
-                    <li><span class="color-ex color-ex--success-color"></span>$success-color</li>
-                    <li><span class="color-ex color-ex--warning-color"></span>$warning-color</li>
-                    <li><span class="color-ex color-ex--danger-color"></span>$danger-color</li>
-                </ul>
+    {# Colors #}
+    <div class="container mt-8">
+        <div class="h2 mb-4">Colors</div>
+        <div class="bg-white grid grid-cols-5 gap-8 rounded-3xl shadow-sm hover:shadow-lg transition-shadow py-6 px-8">
+            <div class="flex flex-col items-center">
+                <div class="bg-secondary-01 rounded-full w-20 h-20"></div>
+                <div class="text-large mt-2">Secondary 01</div>
             </div>
-            <div class="col-right">
-                <h2 class="h2">Gradients</h2>
-                <ul class="stylesheet__colors__list">
-                    <li><span class="color-ex color-ex--gradient-sunny"></span>$gradient-sunny</li>
-                    <li><span class="color-ex color-ex--gradient-picker"></span>$gradient-picker</li>
-                </ul>
+            <div class="flex flex-col items-center">
+                <div class="bg-secondary-02 rounded-full w-20 h-20"></div>
+                <div class="text-large mt-2">Secondary 02</div>
             </div>
-        </div>
-    </div>
-</section>
-
-<section class="stylesheet__shadows">
-    <div class="container">
-        <h2 class="h2">Shadows</h2>
-        <div class="row">
-            <div class="shadoww__w">
-                <div class="shadoww shadoww--little"></div>
+            <div class="flex flex-col items-center">
+                <div class="bg-secondary-03 rounded-full w-20 h-20"></div>
+                <div class="text-large mt-2">Secondary 03</div>
             </div>
-            <div class="shadoww__w">
-                <div class="shadoww shadoww--medium"></div>
+            <div class="flex flex-col items-center">
+                <div class="bg-secondary-04 rounded-full w-20 h-20"></div>
+                <div class="text-large mt-2">Secondary 04</div>
             </div>
-            <div class="shadoww__w">
-                <div class="shadoww shadoww--big"></div>
+            <div class="flex flex-col items-center">
+                <div class="bg-gray-01 rounded-full w-20 h-20"></div>
+                <div class="text-large mt-2">Gray 01</div>
+            </div>
+            <div class="flex flex-col items-center">
+                <div class="bg-gray-02 rounded-full w-20 h-20"></div>
+                <div class="text-large mt-2">Gray 02</div>
+            </div>
+            <div class="flex flex-col items-center">
+                <div class="bg-gray-03 rounded-full w-20 h-20"></div>
+                <div class="text-large mt-2">Gray 03</div>
+            </div>
+            <div class="flex flex-col items-center">
+                <div class="bg-gray-04 rounded-full w-20 h-20"></div>
+                <div class="text-large mt-2">Gray 04</div>
             </div>
         </div>
     </div>
-</section>
 
-<section class="stylesheet__headings-buttons">
-    <div class="container">
-        <div class="row">
-            <div class="col-left">
-                <h1 class="h1">Title level 1</h1>
-                <h2 class="h2">Title level 2</h2>
-                <h3 class="h3">Title level 3</h3>
-                <h4 class="h4">Title level 4</h4>
-                <h5 class="h5">Title level 5</h5>
-                <div class="headline">Headline</div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, <strong> animi consectetur consequuntur corporis eius</strong>, est maxime nemo nisi nobis odit omnis quasi quibusdam quod! Corporis eligendi nisi officia quaerat vero?</p>
-                <p class="p--medium">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, <strong> animi consectetur consequuntur corporis eius</strong>, est maxime nemo nisi nobis odit omnis quasi quibusdam quod! Corporis eligendi nisi officia quaerat vero?</p>
-                <p class="p--large">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, <strong> animi consectetur consequuntur corporis eius</strong>, est maxime nemo nisi nobis odit omnis quasi quibusdam quod! Corporis eligendi nisi officia quaerat vero?</p>
-                <p class="p--small">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, <strong> animi consectetur consequuntur corporis eius</strong>, est maxime nemo nisi nobis odit omnis quasi quibusdam quod! Corporis eligendi nisi officia quaerat vero?</p>
+    {# Typography #}
+    <div class="container mt-8">
+        <div class="h2 mb-4">Typography</div>
+        <div class="bg-white grid grid-cols-3 gap-4 rounded-3xl shadow-sm hover:shadow-lg transition-shadow py-6 px-8">
 
-                <h3 class="h3">Bullet points</h3>
-                <ul class="primary-list">
-                    <li>Lorem ipsum dolor sit amet</li>
-                    <li>Consectetur adipisicing elit</li>
-                    <li>Animi consectetur consequuntur</li>
-                </ul>
-                <ol>
-                    <li>Lorem ipsum dolor sit amet</li>
-                    <li>Consectetur adipisicing elit</li>
-                    <li>Animi consectetur consequuntur</li>
-                </ol>
-            </div>
-            <div class="col-right">
-                <a href="#" class="btn btn--inline">Button inline</a>
-                <a href="#" class="btn btn--inline" disabled>Button inactive</a>
+            <div class="font-head text-h1-xs">Title level 1</div>
+            <div class="font-head text-h1-md">Title level 1</div>
+            <div class="font-head text-h1-lg">Title level 1</div>
 
-                <a href="#" class="btn btn--primary">Button primary</a>
-                <a href="#" class="btn btn--secondary">Button secondary</a>
-                <a href="#" class="btn btn--secondary" disabled>Button disabled</a>
+            <div class="font-head text-h2-xs">Title level 2</div>
+            <div class="font-head text-h2-md">Title level 2</div>
+            <div class="font-head text-h2-lg">Title level 2</div>
 
-                <a href="#" class="btn btn--primary btn--big">Button big primary</a>
-                <a href="#" class="btn btn--secondary btn--big">Button big secondary</a>
-                <a href="#" class="btn btn--primary btn--big" disabled>Button big disabled</a>
+            <div class="font-head text-h2-xs">Title level 3</div>
+            <div class="font-head text-h2-md">Title level 3</div>
+            <div class="font-head text-h2-lg">Title level 3</div>
 
-                <a href="#" class="btn btn--primary btn--huge">Button huge primary</a>
-                <a href="#" class="btn btn--secondary btn--huge">Button huge secondary</a>
-                <a href="#" class="btn btn--secondary btn--huge" disabled>Button huge disabled</a>
-                <br>
-                <div>
-                    <span class="component__color-donut"></span>
-                    &nbsp;
-                    <span class="component__color-donut component__color-donut--big"></span>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+            <div class="font-head text-h4-xs">Title level 4</div>
+            <div class="font-head text-h4-md">Title level 4</div>
+            <div class="font-head text-h4-lg">Title level 4</div>
 
-<section class="stylesheet__headings-buttons on-dark on-dark-bg">
-    <div class="container">
-        <div class="row">
-            <div class="col-left">
-                <h1 class="h1">Title level 1</h1>
-                <h2 class="h2">Title level 2</h2>
-                <h3 class="h3">Title level 3</h3>
-                <h4 class="h4">Title level 4</h4>
-                <h5 class="h5">Title level 5</h5>
-                <div class="headline">Headline</div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, <strong> animi consectetur consequuntur corporis eius</strong>, est maxime nemo nisi nobis odit omnis quasi quibusdam quod! Corporis eligendi nisi officia quaerat vero?</p>
-                <p class="p--medium">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, <strong> animi consectetur consequuntur corporis eius</strong>, est maxime nemo nisi nobis odit omnis quasi quibusdam quod! Corporis eligendi nisi officia quaerat vero?</p>
-                <p class="p--large">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, <strong> animi consectetur consequuntur corporis eius</strong>, est maxime nemo nisi nobis odit omnis quasi quibusdam quod! Corporis eligendi nisi officia quaerat vero?</p>
-                <p class="p--small">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, <strong> animi consectetur consequuntur corporis eius</strong>, est maxime nemo nisi nobis odit omnis quasi quibusdam quod! Corporis eligendi nisi officia quaerat vero?</p>
+            <div class="font-head text-h5">Title level 5</div>
+            <div class="font-head text-h5">Title level 5</div>
+            <div class="font-head text-h5">Title level 5</div>
 
-                <h3 class="h3">Bullet points</h3>
-                <ul class="primary-list">
-                    <li>Lorem ipsum dolor sit amet</li>
-                    <li>Consectetur adipisicing elit</li>
-                    <li>Animi consectetur consequuntur</li>
-                </ul>
-                <ol>
-                    <li>Lorem ipsum dolor sit amet</li>
-                    <li>Consectetur adipisicing elit</li>
-                    <li>Animi consectetur consequuntur</li>
-                </ol>
-            </div>
-            <div class="col-right">
-                <a href="#" class="btn btn--inline">Button inline</a>
-                <a href="#" class="btn btn--inline" disabled>Button inactive</a>
+            <div class="font-head uppercase tracking-widest text-secondary-01 text-headline-xs">Headline</div>
+            <div class="font-head uppercase tracking-widest text-secondary-01 text-headline-xs">Headline</div>
+            <div class="font-head uppercase tracking-widest text-secondary-01 text-headline-lg">Headline</div>
 
-                <a href="#" class="btn btn--primary">Button primary</a>
-                <a href="#" class="btn btn--secondary">Button secondary</a>
-                <a href="#" class="btn btn--secondary" disabled>Button disabled</a>
+            <div class="font-text text-lg">Large text</div>
+            <div class="font-text text-lg">Large text</div>
+            <div class="font-text text-lg">Large text</div>
 
-                <a href="#" class="btn btn--primary btn--big">Button big primary</a>
-                <a href="#" class="btn btn--secondary btn--big">Button big secondary</a>
-                <a href="#" class="btn btn--primary btn--big" disabled>Button big disabled</a>
+            <div class="font-text text-md">Medium text</div>
+            <div class="font-text text-md">Medium text</div>
+            <div class="font-text text-md">Medium text</div>
 
-                <a href="#" class="btn btn--primary btn--huge">Button huge primary</a>
-                <a href="#" class="btn btn--secondary btn--huge">Button huge secondary</a>
-                <a href="#" class="btn btn--secondary btn--huge" disabled>Button huge disabled</a>
-            </div>
-        </div>
-    </div>
-</section>
+            <div class="font-text text-base">Normal text</div>
+            <div class="font-text text-base">Normal text</div>
+            <div class="font-text text-base">Normal text</div>
 
-<section class="stylesheet__cards">
-    <div class="container">
+            <div class="font-text text-base font-bold">Normal text</div>
+            <div class="font-text text-base font-bold">Normal text</div>
+            <div class="font-text text-base font-bold">Normal text</div>
 
-        <h2 class="h2">Cards</h2>
-
-        <h3 class="h3">Card exemple</h3>
-        <div class="row">
-            <div class="stylesheet__cards__container">
-              {#  {% include 'components/cards/card-category.html.twig' with {card : {
-                    'img': 'https://picsum.photos/400',
-                    'text': 'Homme',
-                    'url': '#'
-                }} %}#}
-            </div>
+            <div class="font-text text-sm">Small text</div>
+            <div class="font-text text-sm">Small text</div>
+            <div class="font-text text-sm">Small text</div>
         </div>
 
-    </div>
-</section>
+        <div class="bg-white grid grid-cols-3 gap-4 rounded-3xl shadow-sm hover:shadow-lg transition-shadow py-6 px-8">
 
-<section class="stylesheet__forms">
-    <div class="container">
-        <h2 class="h2">Forms - Insert GF shortcode</h2>
-        <form action="" class="form-holder">
-            <div class="field__wrapper">
-                <label for="lastname">Nom</label>
-                <input type="text" name="lastname" class="" id="lastname" value="" placeholder="Votre nom">
-            </div>
-            <div class="field__wrapper">
-                <label for="firstname">Prénom</label>
-                <input type="text" name="firstname" class="" id="firstname" value="" placeholder="Votre prénom">
-            </div>
-            <div class="field__wrapper">
-                <label for="lastname">Nom</label>
-                <input type="text" name="lastname" class="is-invalid " id="lastname" value="" placeholder="Votre nom">
-                <div class="invalid-feedback">
-                    The Lastname is required
-                </div>
-            </div>
-            <div class="field__wrapper">
-                <label for="firstname">Prénom</label>
-                <input type="text" name="firstname" class="is-invalid " id="firstname" value="" placeholder="Votre prénom">
-                <div class="invalid-feedback">
-                    The Lastname is required
-                </div>
-            </div>
-            <div class="field__wrapper field__wrapper--fw">
-                <label for="email">E-mail</label>
-                <input type="email" name="email" class="" id="email" value="" placeholder="Votre e-mail">
-            </div>
-            <div class="field__wrapper field__wrapper--fw">
-                <label for="message">Message</label>
-                <textarea rows="3" name="message" class="" id="message" placeholder="Votre message"></textarea>
-            </div>
-            <div class="field__wrapper field__wrapper--fw">
-                <label for="message">Message</label>
-                <textarea rows="3" name="message" class="is-invalid" id="message" placeholder="Votre message"></textarea>
-                <div class="invalid-feedback">
-                    The Message is required
-                </div>
-            </div>
-            <div class="field__wrapper field__check field__wrapper--fw">
-                <input class="field__check__input is-invalid" type="checkbox" name="rgpd" value="1" id="rgpd">
-                <label class="field__check__label" for="rgpd">
-                    En cochant cette case, le client accepte que ses données personnelles soient utilisées par Panzeri.
-                </label>
-            </div>
-            <div class="field__wrapper field__check field__wrapper--fw">
-                <input class="field__check__input is-invalid" type="radio" name="rgpd" value="1" id="radio">
-                <label class="field__check__label" for="radio">
-                    En cochant cette case, le client accepte que ses données personnelles soient utilisées par Panzeri.
-                </label>
-            </div>
-            <div class="field__wrapper field__wrapper--fw">
-                <button type="submit">Envoyer</button>
-            </div>
-            <div class="field__wrapper field__wrapper--fw">
-                <button type="submit" class="btn--fw">Envoyer</button>
-            </div>
-        </form>
+            <div class="font-head text-h1-xs">Title level 1</div>
+            <div class="font-head text-h1-md">Title level 1</div>
+            <div class="font-head text-h1-lg">Title level 1</div>
+
+            <div class="font-head text-h2-xs">Title level 2</div>
+            <div class="font-head text-h2-md">Title level 2</div>
+            <div class="font-head text-h2-lg">Title level 2</div>
+
+            <div class="font-head text-h2-xs">Title level 3</div>
+            <div class="font-head text-h2-md">Title level 3</div>
+            <div class="font-head text-h2-lg">Title level 3</div>
+
+            <div class="font-head text-h4-xs">Title level 4</div>
+            <div class="font-head text-h4-md">Title level 4</div>
+            <div class="font-head text-h4-lg">Title level 4</div>
+
+            <div class="font-head text-h5">Title level 5</div>
+            <div class="font-head text-h5">Title level 5</div>
+            <div class="font-head text-h5">Title level 5</div>
+
+            <div class="font-head uppercase tracking-widest text-secondary-01 text-headline-xs">Headline</div>
+            <div class="font-head uppercase tracking-widest text-secondary-01 text-headline-xs">Headline</div>
+            <div class="font-head uppercase tracking-widest text-secondary-01 text-headline-lg">Headline</div>
+
+            <div class="font-text text-lg">Large text</div>
+            <div class="font-text text-lg">Large text</div>
+            <div class="font-text text-lg">Large text</div>
+
+            <div class="font-text text-md">Medium text</div>
+            <div class="font-text text-md">Medium text</div>
+            <div class="font-text text-md">Medium text</div>
+
+            <div class="font-text text-base">Normal text</div>
+            <div class="font-text text-base">Normal text</div>
+            <div class="font-text text-base">Normal text</div>
+
+            <div class="font-text text-base font-bold">Normal text</div>
+            <div class="font-text text-base font-bold">Normal text</div>
+            <div class="font-text text-base font-bold">Normal text</div>
+
+            <div class="font-text text-sm">Small text</div>
+            <div class="font-text text-sm">Small text</div>
+            <div class="font-text text-sm">Small text</div>
+        </div>
     </div>
-</section>
+
+    {# Buttons #}
+    <div class="container mt-8">
+        <div class="h2 mb-4">Buttons</div>
+        <div class="bg-white grid grid-cols-3 gap-4 rounded-3xl shadow-sm hover:shadow-lg transition-shadow py-6 px-8">
+            {% from 'components/button/button.html.twig' import _button %}
+
+         {#   {{ _button({
+                title: "Button primary",
+                type: "primary"
+            }) }}
+
+            {{ _button({
+                title: "Button outline",
+                type: "outline"
+            }) }}#}
+
+            {{ _button({
+                title: "Button big primary",
+                type: "primary"
+            }) }}
+
+
+            {{ _button({
+                title: "Button big outline",
+                type: "outline"
+            }) }}
+
+            <a href="#" class="btn-secondary btn-big">Button big secondary</a>
+            <a href="#" class="btn-tertiary">Button tertiary</a>
+            <a href="#" class="btn-primary">Button primary</a>
+            <a href="#" class="btn-secondary">Button secondary</a>
+            <a href="#" class="btn-only-icon"></a>
+            <a href="#" class="btn-primary btn-icon">Button primary</a>
+            <a href="#" class="btn-secondary btn-icon">Button secondary</a>
+            <a href="#" class="btn-tertiary btn-icon">Button tertiary</a>
+            <a href="#" class="btn-primary btn-primary--disabled">Button primary disabled</a>
+            <a href="#" class="btn-secondary btn-secondary--disabled">Button secondary disabled</a>
+            <a href="#" class="btn-tertiary btn-tertiary--disabled">Button tertiary disabled</a>
+            <a href="#" class="btn-primary btn-primary--disabled">Button primary disabled</a>
+            <a href="#" class="btn-secondary btn-secondary--disabled btn-icon">Button secondary disabled</a>
+            <a href="#" class="btn-tertiary btn-tertiary--disabled btn-icon">Button tertiary disabled</a>
+        </div>
+    </div>
+
+    {# Wysiwyg #}
+    <div class="container mt-8">
+        <div class="h2 mb-4">Wysiwyg</div>
+        <div class="bg-white rounded-3xl shadow-sm hover:shadow-lg transition-shadow py-6 px-8 wysiwyg">
+            <h1>Title level 1</h1>
+            <h2>Title level 2</h2>
+            <h3>Title level 3</h3>
+            <h4>Title level 4</h4>
+            <h5>Title level 5</h5>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, <a href="#"> animi consectetur consequuntur corporis eius</a>, est maxime nemo nisi nobis odit omnis quasi quibusdam quod! Corporis eligendi nisi officia quaerat vero?</p>
+            <ul>
+                <li>Lorem ipsum dolor sit amet</li>
+                <li>Consectetur adipisicing elit</li>
+                <li>Animi consectetur consequuntur</li>
+            </ul>
+            <ol>
+                <li>Lorem ipsum dolor sit amet</li>
+                <li>Consectetur adipisicing elit</li>
+                <li>Animi consectetur consequuntur</li>
+            </ol>
+        </div>
+    </div>
+</div>

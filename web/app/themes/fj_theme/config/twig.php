@@ -9,5 +9,9 @@ return [
     'extensions' => [
         \App\TwigExtensions\TextExtension::class,
         \App\TwigExtensions\NewsExtension::class,
+        \App\TwigExtensions\ClassesExtension::class,
+        \App\TwigExtensions\GetOptionsExtension::class,
+        \App\TwigExtensions\EncoreExtension::class,
+        \App\TwigExtensions\ImageTwigExtension::class,
     ],
 ];
