@@ -26,23 +26,30 @@
             </div>
             <div class="lg:col-span-2">
                 <p class="xl2">À propos</p>
+                <ul class="mt-6">
+                    {% for item in menu_footer.items %}
+                        <li class="mt-2">
+                            <a class="link" href="{{ link(item.ID) }}">{{ item.name }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
             </div>
 
         </div>
-        <div class="footer-bottom py-6 border-t border-gray-03">
+        <div class="footer-bottom py-6 border-t border-gray-03 flex flex-col items-center lg:flex-row lg:justify-between">
             <ul class="footer-bottom__links flex flex-col items-center sm:flex-row">
                 <li class="footer-bottom__link">
                     <a href="{{ fn('get_permalink', link.legals.ID) }}" class="link">{{ link.legals.post_title }}</a>
                 </li>
-                <li class="footer__link">
-                    <a href="{{ fn('get_permalink', link.rgpd.ID) }}" class="link">{{ link.rgpd.post_title }}</a>
+                <li class="footer__link max-sm:my-4 sm:mx-2 sm:px-2 sm:border-x sm:border-gray-03">
+                    <a href="{{ fn('get_permalink', link.confidential.ID) }}" class="link">{{ link.confidential.post_title }}</a>
                 </li>
                 <li class="footer__link">
                     <a href="{{ fn('get_permalink', link.sitemap.ID) }}" class="link">{{ link.sitemap.post_title }}</a>
                 </li>
             </ul>
             <span
-                class="p copyright copyright--society">{{ __('Tous droits réservés Jacquemard SARL', '') }} {{ "now"|date("Y") }}</span>
+                class="p max-lg:mt-6 copyright copyright--society">{{ __('Tous droits réservés Jacquemard SARL', '') }} {{ "now"|date("Y") }}</span>
         </div>
     </div>
 </footer>

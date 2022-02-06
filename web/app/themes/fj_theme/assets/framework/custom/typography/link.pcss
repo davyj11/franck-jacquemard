@@ -1,0 +1,31 @@
+
+@layer utilities {
+
+    .link{
+        @apply font-text;
+        @apply text-primary-white;
+        @apply transition-colors;
+        @apply hover:text-gray-05;
+
+        &--bold{
+            @apply font-bold;
+        }
+
+        &--small{
+            @apply text-headline-xs;
+        }
+
+        &--white{
+            @apply text-primary-white;
+        }
+
+        &--gray{
+            @apply text-gray-06;
+            @apply hover:text-primary-white;
+        }
+
+        &.absolute-full{
+            @apply z-30;
+        }
+    }
+}

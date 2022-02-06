@@ -1,0 +1,25 @@
+{% from 'components/button/button.html.twig' import _button %}
+
+<header class="site-header" js-menu-sticky js-menu-mobile>
+    <div class="container">
+        <div class="site-header__inner">
+            <a class="w-logo" href="{{ fn('get_site_url') }}">
+                <img src="{{ asset('/build/images/logo-dark.svg') }}" alt="Logo Jacquemard SARL" class="logo"/>
+            </a>
+            <div class="w-menu">
+                {% include "navigations/header/menu.html.twig" with {'menu': menu.get_items} %}
+                {{ _button({
+                    classes: "menu-contact",
+                    title: "CONTACT",
+                    url: link(const_pages.contact.ID),
+                    type: "primary",
+                    big: true,
+                }) }}
+            </div>
+
+        </div>
+
+    </div>
+</header>
+
+

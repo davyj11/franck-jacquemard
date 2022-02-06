@@ -14,6 +14,7 @@ class Lumberjack extends LumberjackCore
         $context['is_front_page'] = is_front_page();
         $context['is_logged_in'] = is_user_logged_in();
         $context['menu'] = new Menu('main-nav');
+        $context['menu_footer'] = new Menu('footer-nav');
 
         return $context;
     }

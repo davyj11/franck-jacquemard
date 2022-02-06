@@ -13,5 +13,6 @@ return [
         \App\TwigExtensions\GetOptionsExtension::class,
         \App\TwigExtensions\EncoreExtension::class,
         \App\TwigExtensions\ImageTwigExtension::class,
+        \App\TwigExtensions\LinkTwigExtension::class,
     ],
 ];

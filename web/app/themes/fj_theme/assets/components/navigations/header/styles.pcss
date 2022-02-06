@@ -1,0 +1,102 @@
+@import './../../../framework/tailwind.pcss';
+
+.site-header {
+    @apply bg-primary-white;
+    @apply w-full;
+    @apply relative;
+    @apply transition-transform;
+    @apply py-4;
+
+    &__inner {
+        @apply flex justify-between items-center;
+
+        .logo {
+            @apply w-20;
+            @apply lg:w-[130px];
+            @apply transition-[width];
+        }
+
+        .w-menu {
+            @apply flex items-center;
+
+            .menu {
+                @apply flex flex-col;
+
+                @screen lg {
+                    @apply flex-row items-center;
+                }
+
+                .menu-item {
+                    @apply uppercase tracking-widest font-text text-base font-semibold;
+                    @apply relative z-10;
+
+                    & + .menu-item {
+                        @apply max-lg:mt-8 lg:ml-10 xl:ml-12;
+                    }
+
+                    &:before {
+                        content: '';
+                        @apply -z-[1];
+                        @apply opacity-30;
+                        @apply w-[105%] h-3;
+                        @apply absolute top-1/2 -left-[2.5%];
+                        @apply bg-secondary;
+                        @apply scale-x-0;
+                        @apply transition-transform origin-left;
+                    }
+
+                    &.current-menu-item, &:hover {
+                        &:before {
+                            @apply scale-x-100;
+                        }
+                    }
+
+                }
+            }
+
+            .menu-contact {
+                @apply ml-8;
+            }
+        }
+    }
+}
+
+
+
+header, .header-mobile{
+    &.sticky-up,
+    &.sticky {
+        position: fixed;
+        z-index: 110000;
+        top: 0;
+        left: 0;
+        width: 100%;
+
+        .logo {
+            @apply w-[88px];
+        }
+    }
+    &.sticky{
+        animation: slideDown 0.3s ease-in-out;
+        @keyframes slideDown {
+            0% {
+                transform: translateY(-100%);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+    }
+    &.sticky-up{
+        transform: translateY(-100%);
+
+        &.scroll{
+            @include transition-default();
+        }
+        &.scroll--up{
+            box-shadow: $box-shadow-little;
+
+            transform: translateY(0);
+        }
+    }
+}

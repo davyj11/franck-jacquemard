@@ -28,6 +28,12 @@ glob.sync(`./assets/components/**/index.js`).forEach((jsFile) => {
     Encore.addEntry(destFile, jsFile);
 })
 
+glob.sync(`./assets/templates/**/index.js`).forEach((jsFile) => {
+    let destFile = jsFile.replace("./assets/", "");
+    destFile = destFile.replace(path.extname(destFile), "");
+    Encore.addEntry(destFile, jsFile);
+})
+
 //Encore.addEntry('tailwind', './assets/framework/tailwind.js');
 
 Encore
