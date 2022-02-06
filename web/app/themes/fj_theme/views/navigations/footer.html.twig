@@ -1,26 +1,48 @@
-<footer class="footer on-dark">
+{% from 'components/button/button.html.twig' import _button %}
+
+<footer class="footer dark bg-primary-dark p-default-top">
     <div class="container">
-        <div class="footer-top">
-            FOOTER TOP
+        <div class="footer-top grid gap-10 sm:grid-cols-2 lg:gap-6 lg:grid-cols-12 p-default-bottom">
+            <div class="lg:col-span-3">
+                <a href="{{ fn('get_site_url') }}">
+                    <img src="{{ asset('/build/images/logo-white-full.svg') }}" alt="Logo Jacquemard SARL" class="max-w-[220px]"/>
+                </a>
+            </div>
+            <div class="lg:col-span-4 lg:pr-6">
+                <p class="xl2">{{ footer.desc_title }}</p>
+                <p class="p-sm mt-4 mb-6">{{ footer.desc_text }}</p>
+                {{ _button({
+                    title: footer.desc_button.title,
+                    url: footer.desc_button.url,
+                    type: "primary"
+                }) }}
+
+            </div>
+            <div class="lg:col-span-3">
+                <p class="p-md">{{ main_infos.address }}</p>
+                <a href="tel:{{ main_infos.phone }}" class="block mt-6">
+                    <p class="p-md flex items-center"><i class="gg-phone mr-2"></i>{{ main_infos.phone }}</p>
+                </a>
+            </div>
+            <div class="lg:col-span-2">
+                <p class="xl2">À propos</p>
+            </div>
+
         </div>
-        <div class="footer-bottom">
-            <ul class="footer-bottom__links">
+        <div class="footer-bottom py-6 border-t border-gray-03">
+            <ul class="footer-bottom__links flex flex-col items-center sm:flex-row">
                 <li class="footer-bottom__link">
-                    <a href="{{ fn('get_permalink', link.legals.ID) }}" class="link">Mentions
-                        légales {{ link.legals.post_title }}</a>
+                    <a href="{{ fn('get_permalink', link.legals.ID) }}" class="link">{{ link.legals.post_title }}</a>
                 </li>
                 <li class="footer__link">
-                    <a href="{{ fn('get_permalink', link.rgpd.ID) }}" class="link">Politique de
-                        confidentialité{{ link.rgpd.post_title }}</a>
+                    <a href="{{ fn('get_permalink', link.rgpd.ID) }}" class="link">{{ link.rgpd.post_title }}</a>
+                </li>
+                <li class="footer__link">
+                    <a href="{{ fn('get_permalink', link.sitemap.ID) }}" class="link">{{ link.sitemap.post_title }}</a>
                 </li>
             </ul>
-            <span class="copyright copyright--adeliom">
-                <a href="https://adeliom.com" rel="nofollow" target="_blank">
-                    Conception
-                    <img src="{{ mix('/images/logo_adeliom.svg') }}" alt="logo Adeliom"/> {{ __('Adeliom Agency', '') }}</a>
-            </span>
             <span
-                class="copyright copyright--society">{{ __('Tous droits réservés XXX', '') }} {{ "now"|date("Y") }}</span>
+                class="p copyright copyright--society">{{ __('Tous droits réservés Jacquemard SARL', '') }} {{ "now"|date("Y") }}</span>
         </div>
     </div>
 </footer>

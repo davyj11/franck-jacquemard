@@ -82,20 +82,45 @@ class ParametersAdmin extends AbstractAdmin
         yield Group::make("Liens du site", "link")
             ->instructions('Renseignez les liens des pages concernées')
             ->fields([
-                PostObject::make('Page example', 'example')->postTypes(['page'])->required()
+                PostObject::make('Nous contacter', 'contact')->postTypes(['page'])->required(),
+                PostObject::make('Mentions légales', 'legals')->postTypes(['page'])->required(),
+                PostObject::make('Politique de confidentialité', 'confidential')->postTypes(['page'])->required(),
+                PostObject::make('Sitemap', 'sitemap')->postTypes(['page'])->required(),
             ])
             ->layout('row');
 
-        $forms = [];
-        foreach (self::getForms() as $key => $label) {
-            $forms[] = Select::make($label, $key)->choices(self::getFormsID())->required();
-        }
 
-        yield Tab::make(__("Formulaires"));
-        yield Group::make("Formulaires", "form")
-            ->instructions('Sélectionnez les formulaires concernés')
-            ->fields($forms)
+        yield Tab::make(__("Informations générales"));
+        yield Group::make("Informations générales", "main_infos")
+            ->instructions('Renseignez les informations générales du site')
+            ->fields([
+                Text::make("Numéro de téléphone", 'phone')->required(),
+                Textarea::make("Adresse", 'address')->required()->newLines('br'),
+            ])
             ->layout('row');
+
+
+        yield Tab::make(__("Footer"));
+        yield Group::make("Footer", "footer")
+            ->instructions('Renseignez les informations du pied de page')
+            ->fields([
+                Text::make("Titre de la description", 'desc_title')->required(),
+                Textarea::make("Texte de la description", 'desc_text')->required(),
+                Link::make("Bouton", 'desc_button')
+            ])
+            ->layout('row');
+
+
+//        $forms = [];
+//        foreach (self::getForms() as $key => $label) {
+//            $forms[] = Select::make($label, $key)->choices(self::getFormsID())->required();
+//        }
+//
+//        yield Tab::make(__("Formulaires"));
+//        yield Group::make("Formulaires", "form")
+//            ->instructions('Sélectionnez les formulaires concernés')
+//            ->fields($forms)
+//            ->layout('row');
 
         /* A utiliser lorsque les mails sont envoyés manuellement */
 
@@ -113,12 +138,12 @@ class ParametersAdmin extends AbstractAdmin
             ])
             ->layout('row');*/
 
-        yield Tab::make(__("Autres"));
-        yield Group::make("Configuration", "config")
-            ->fields([
-                Text::make('Clé google maps', 'gmap')->required(),
-            ])
-            ->layout('row');
+//        yield Tab::make(__("Autres"));
+//        yield Group::make("Configuration", "config")
+//            ->fields([
+//                Text::make('Clé google maps', 'gmap')->required(),
+//            ])
+//            ->layout('row');
     }
 
     /**

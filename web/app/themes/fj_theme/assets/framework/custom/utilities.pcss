@@ -16,35 +16,6 @@
     }
 
     /************************************************
-                     DECORATION
-    *************************************************/
-    .bevel {
-        position: absolute;
-        left: 0;
-        width: 0;
-        height: 0;
-        border-top-width: 30px;
-        border-right: 100vw solid transparent;
-        z-index: 10;
-        @screen md {
-            border-top-width: 44px;
-        }
-    }
-
-    .bevel--bottom {
-        bottom: 0;
-        transform: matrix(1, 0, 0, -1, 0, 0);
-    }
-
-    .bevel--top {
-        top: 0;
-    }
-
-    .bevel--increase {
-        transform: matrix(-1, 0, 0, 1, 0, 0);
-    }
-
-    /************************************************
                     DISPLAY
    *************************************************/
     .flex-center {
