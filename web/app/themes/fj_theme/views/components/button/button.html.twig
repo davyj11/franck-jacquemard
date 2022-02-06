@@ -1,54 +1,135 @@
-{% macro _button(props = {}) %}
-	{% set baseProps = {
-		label: "En savoir plus",
-		tag: "a",
-		variant: "primary",
-		size: "large",
-		target: false,
-		title: false,
-		disabled: false,
-		url: false,
-		type: false,
-		id: false,
-		className: false
-	} %}
+{% macro _button(settings = {}) %}
 
-	{% set classes = {
-		base: "btn text-base trans-default rounded-md inline-block transition ease-in-out duration-200",
-		disabled: {
-			primary: "bg-gray-03 text-gray-01 pointer-events-none",
-			outline: "bg-transparent border border-gray-02 text-gray-02 pointer-events-none"
-		},
-		size: {
-			normal: "px-6 py-2.5 text-[12px]",
-			large: "px-10 py-4 text-[15px]"
-		},
-		variant: {
-			primary: "bg-primary-black text-white hover:bg-gray-01 dark:bg-secondary-01",
-			outline: "border border-primary-black
-			dark:border-white dark:text-white hover:dark:border-gray-03 hover:dark:text-gray-03
-			hover:border-gray-01 hover:text-gray-01",
-			icon : "font-semibold text-[15] tracking-[-0.04em] hover:text-secondary-01 dark:text-white hover:dark:text-gray-03"
+    {# Tag Enum #}
+    {% set tags = {
+        a: 'a',
+        button: 'button'
+    } %}
 
-		}
-	} %}
+    {# Types Enum #}
+    {% set types = {
+        primary: 'btn-primary',
+        secondary: 'btn-secondary',
+    } %}
 
-	{% set props = baseProps|merge(props) %}
+    {# Variants Enum #}
+    {% set variants = {
+        big: 'btn-big',
+    } %}
 
+    {# attributes Enum #}
+    {% set attributesEnum = {
+        addCart: 'js-cart-add'
+    } %}
 
-	<{{ props.tag }}
-	class="{{ cls("#{props.className} #{classes.base} #{props.disabled ? classes.disabled[props.variant] : classes.variant[props.variant]}  #{props.variant != 'icon' ? classes.size[props.size] : '' }") }}"
-	title="{{ props.title ? props.title : props.label }}"
-	id="{{ props.id|default('') }}"
-	{% if props.disabled %}disabled{% endif %}
-	{% if props.url and props.tag == "a" %}href="{{ props.url }}"{% endif %}
-	{% if props.target and props.tag == "a" %}target="{{ props.target }}"{% endif %}
-	{% if props.type and props.tag == "button" %}type="{{ props.type }}"{% endif %}
-	>
+    {# Default Settings #}
+    {% set defaultSettings = {
+        button: null,
+        tag: "a",
+        title: "",
+        url: "#",
+        classes: "",
+        target: "_self",
+        type: "primary",
+        big: false,
+        attributes: false,
+        disabled: false,
+        submit: false,
+        id:false,
+    } %}
 
-	{{ props.label }}
+    {% set settings = defaultSettings|merge(settings) %}
 
-	{% if props.icon %} <i class="{{ props.icon }} {{ props.iconPosition == "left" ? "mr-2" : "ml-4" }}"></i> {% endif %}
-	</{{ props.tag }}>
+    {% set classes = [settings.classes, types[settings.type]] %}
+
+    {% set attributes = [] %}
+
+    {# Handle variants #}
+    {% if settings.tag %}
+        {% set tag = settings.tag %}
+    {% endif %}
+
+    {% if settings.icon %}
+        {% set classes = classes|merge([variants.icon]) %}
+    {% endif %}
+
+    {% if settings.leadingIcon %}
+        {% set classes = classes|merge([variants.leadingIcon]) %}
+    {% endif %}
+
+    {% if settings.big %}
+        {% set classes = classes|merge([variants.big]) %}
+    {% endif %}
+
+    {% if settings.white %}
+        {% set classes = classes|merge([variants.white]) %}
+    {% endif %}
+
+    {% if settings.black %}
+        {% set classes = classes|merge([variants.black]) %}
+    {% endif %}
+
+    {% if settings.buyColor %}
+        {% set classes = classes|merge([variants.buyColor]) %}
+    {% endif %}
+
+{#    {% if settings.disabled %}#}
+{#        {% set classes = classes|merge([types[settings.type] ~ '--disabled']) %}#}
+{#    {% endif %}#}
+
+    {# Handle add to cart #}
+    {% if settings.addCart %}
+        {% set classes = classes|merge([variants.addCart]) %}
+        {% set attributes = attributes|merge([attributesEnum.addCart]) %}
+    {% endif %}
+
+    {# Handle attributes #}
+    {% if settings.attributes %}
+        {% set attributes = attributes|merge(settings.attributes[0] is defined ? settings.attributes : [settings.attributes]) %}
+    {% endif %}
+
+    {% if settings.button is not null %}
+        {% set settings = settings|merge({
+            url: settings.button.link,
+            title: settings.button.label,
+            customIcon: settings.button.icon is defined ? settings.button.icon : '',
+            action: settings.button.action is defined ? settings.button.action : '',
+            actionParams: settings.button.actionParams is defined ? settings.button.actionParams : '',
+        }) %}
+    {% endif %}
+
+    {% if tag == "button" %}
+        <button
+                class="{{ classes|join(' ') }}"
+                {{ (settings.action and settings.action != 'openurl' ? ' @click.prevent.stop="clicked(\'%s\', %s)"'|format(settings.action, settings.actionParams|json_encode|e('html_attr') ) : '') | raw }}
+                {% if settings.actions %}
+                    {{ (settings.actions | filter(action => action != 'openurl') ? ' @click.prevent.stop="clicked(\'%s\', %s)"'|format(settings.actions|join(','), settings.actionParams|json_encode|e('html_attr') ) : '') | raw }}
+                {% endif %}
+                {{ attributes|join(' ') }}
+                {% if settings.disabled %} disabled {% endif %}
+                {% if settings.submit %} type="submit" {% else %} type="button" {% endif %}
+                {% if settings.customIcon %} style="--icon: var(--{{ settings.customIcon }})" {% endif %}
+        >
+            {{ settings.title }}
+        </button>
+    {% else %}
+        <a href="{{ settings.url }}"
+           target="{{ settings.target }}"
+                {{ settings.disabled ? 'disabled'}}
+           class="{{ classes|join(' ') }}"
+
+                {{ attributes|join(' ')|raw  }}
+                {% if settings.customIcon %} style="--icon: var(--{{ settings.customIcon }})" {% endif %}
+                {% if settings.id %} id="{{ settings.id }}" {% endif %}
+                {{ (settings.action and settings.action != 'openurl' ? ' @click.prevent.stop="clicked(\'%s\', %s)"'|format(settings.action, settings.actionParams|json_encode|e('html_attr') ) : '') | raw }}
+                {% if settings.actions %}
+                    {{ (settings.actions | filter(action => action != 'openurl') ? ' @click.prevent.stop="clicked(\'%s\', %s)"'|format(settings.actions|join(','), settings.actionParams|json_encode|e('html_attr') ) : '') | raw }}
+                {% endif %}
+                {{ attributes|join(' ')|raw  }}
+                {% if settings.customIcon %} style="--icon: var(--{{ settings.customIcon }})" {% endif %}>
+
+            {{ settings.title }}
+        </a>
+    {% endif %}
 
 {% endmacro %}

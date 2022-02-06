@@ -1,56 +1,33 @@
 @layer components {
-    .h1, .h2, .h3, .h4, .h5, .h6 {
-        @apply tracking-[-0.04em];
-        @apply font-text;
-        @apply font-semibold;
+    .xl6, .xl5, .xl4, .xl3, .xl2 {
+        @apply font-head;
+        @apply font-medium;
         @apply text-primary-black;
-        @apply dark:text-white;
+        @apply dark:text-primary-white;
     }
 
-    .h1 {
-        @apply text-[41px] md:text-[56px] lg:text-[70px];
-        @apply leading-[45px] md:leading-[66px] lg:leading-[80px];
-
-        .italic-font{
-            @apply text-[50px] md:text-[70px] lg:text-[77px];
-        }
+    .xl6 {
+        @apply text-6xl-xs md:text-6xl-md lg:text-6xl-lg;
+        @apply leading-normal;
     }
 
-    .h2 {
-        @apply text-[28px] md:text-[38px] lg:text-[46px];
-        @apply leading-[34px] md:leading-[46px] lg:leading-[55px];
+    .xl5 {
+        @apply text-5xl-xs md:text-5xl-md lg:text-5xl-lg;
+        @apply leading-normal;
     }
 
-    .h3 {
-        @apply text-[24px] md:text-[30px] lg:text-[36px];
-        @apply leading-[29px] md:leading-[36px] lg:leading-[44px];
-        .italic-font{
-            @apply lg:text-[56px];
-        }
+    .xl4 {
+        @apply text-4xl-xs md:text-4xl-md lg:text-4xl-lg;
+        @apply leading-normal;
     }
 
-    .h4 {
-        @apply text-[20px] md:text-[24px];
-        @apply leading-[24] md:leading-[29px];
+    .xl3 {
+        @apply text-3xl-xs md:text-3xl-md lg:text-3xl-lg;
+        @apply leading-normal;
     }
 
-    .h5 {
-        @apply text-[20px];
-        @apply leading-[24px];
-
-        .highlight{
-            &:before{
-                width: calc(100% + 3px);
-            }
-        }
+    .xl2 {
+        @apply text-2xl-xs md:text-2xl-md lg:text-2xl-lg;
+        @apply leading-normal;
     }
-
-    .headline {
-        @apply text-[12px] lg:text-[13px];
-        @apply uppercase;
-        @apply font-semibold;
-        @apply tracking-[0.06em];
-        @apply dark:text-white;
-    }
-
 }

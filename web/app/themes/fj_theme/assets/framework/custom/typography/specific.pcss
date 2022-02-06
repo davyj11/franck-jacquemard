@@ -1,25 +1,5 @@
 @layer components {
-    .italic-font {
-        @apply text-secondary-01 tracking-[-0.03em];
-        @apply text-[40px] md:text-[52px] lg:text-[69px];
-        @apply leading-[40px] md:leading-[52px] lg:leading-[69px];
-        @apply font-highlight;
-        @apply dark:text-white;
-    }
 
-    .highlight {
-        @apply relative inline-block z-20;
-
-        &:before {
-            content: "";
-            height: calc(100% - 5px);
-            width: calc(100% + 10px);
-            z-index: -1;
-            @apply absolute pointer-events-none;
-            @apply -translate-y-1/2 -translate-x-1/2 top-1/2 left-1/2 -rotate-2;
-            @apply bg-secondary-02-30 dark:bg-secondary-01;
-        }
-    }
 }
 
 .main-breadcrumb{

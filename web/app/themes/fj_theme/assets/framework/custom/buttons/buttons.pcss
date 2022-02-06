@@ -1,0 +1,37 @@
+@layer components {
+    .btn-primary {
+        @apply h-[40px];
+        @apply relative;
+        @apply bg-primary;
+        @apply leading-[40px];
+        @apply px-4;
+        @apply text-center;
+        @apply text-primary-white;
+        @apply font-bold font-text text-base;
+        @apply transition-colors;
+        @apply md:hover:bg-secondary;
+        @apply dark:bg-secondary;
+        @apply md:hover:dark:bg-secondary-dark;
+    }
+
+    .btn-secondary {
+        @apply h-[40px];
+        @apply relative;
+        @apply bg-transparent;
+        @apply leading-[40px];
+        @apply px-4;
+        @apply text-center;
+        @apply text-primary;
+        @apply border border-primary;
+        @apply font-bold font-text text-base;
+        @apply transition-colors;
+        @apply md:hover:text-secondary md:hover:border-secondary;
+        @apply dark:text-secondary dark:border-secondary;
+        @apply md:hover:text-secondary-dark md:hover:border-secondary-dark;
+    }
+
+    .btn-big {
+        @apply h-[48px];
+        @apply leading-[48px];
+    }
+}
