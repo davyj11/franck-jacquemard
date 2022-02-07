@@ -1,0 +1,36 @@
+
+{% from 'components/button/button.html.twig' import _button %}
+
+{% set defaultSettings = {
+    isHome: false,
+    title: '',
+    image: false,
+    button: false,
+} %}
+
+{% set settings = defaultSettings|merge(settings is defined ? settings : {}) %}
+
+<section class="flex-header dark {{ settings.isHome ? 'flex-header--home' }}">
+    <div class="w-img">
+        {{ image(settings.image, 'full') }}
+    </div>
+
+    <div class="container">
+        <div class="w-content">
+            {% if settings.title %}
+                <h1 class="title xl6">
+                    {{ settings.title }}
+                </h1>
+            {% endif %}
+            {% if settings.button %}
+                {% set btn = settings.button %}
+                {{ _button({
+                    title: btn.title,
+                    url: btn.url,
+                    type: "primary"
+                }) }}
+            {% endif %}
+        </div>
+    </div>
+
+</section>

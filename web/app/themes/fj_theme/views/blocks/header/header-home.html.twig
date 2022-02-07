@@ -1,0 +1,8 @@
+{% set settings = {
+    isHome: true,
+    title: fields.title,
+    image: fields.img,
+    button: fields.button
+} %}
+
+{% include 'blocks/header/_header.html.twig' with {settings} %}

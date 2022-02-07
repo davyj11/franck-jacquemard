@@ -3,17 +3,15 @@
    {% block stylesheet %}
        {{ parent() }}
        {{ encore_entry_link_tags('templates/standard/index') }}
-
    {% endblock %}
 
 {% block content %}
     {{ content|raw }}
-    {% include 'stylesheet.html.twig' %}
 {% endblock %}
 
-    {% block javascript %}
+{% block javascript %}
     {{ parent() }}
     {{ encore_entry_script_tags('templates/standard/index') }}
-   {% endblock %}
+ {% endblock %}
 
 

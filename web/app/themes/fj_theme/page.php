@@ -24,7 +24,7 @@ class PageController extends Controller
         $context = Timber::get_context();
         $page = new Page();
 
-        $context['post'] = $page;
+        $context['page'] = $page;
         $context['title'] = $page->title;
         $context['content'] = $page->content;
         $context['flex_content'] =  $page->meta('flex_content');

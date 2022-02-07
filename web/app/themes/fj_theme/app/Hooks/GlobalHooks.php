@@ -23,8 +23,8 @@ class GlobalHooks
     {
         wp_deregister_script('jquery');
         wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js', array(), false, false);
-        wp_enqueue_style("style_global", mix("/styles/global.css"));
-        wp_enqueue_script("script_global", mix("/scripts/global.js"), array("jquery"), false, true);
+       // wp_enqueue_style("style_global", mix("/styles/global.css"));
+        //wp_enqueue_script("script_global", mix("/scripts/global.js"), array("jquery"), false, true);
     }
 
     /**
