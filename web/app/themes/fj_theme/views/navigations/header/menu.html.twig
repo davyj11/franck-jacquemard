@@ -7,7 +7,7 @@
                 {% else %}
                     {% set icon = '' %}
                 {% endif %}
-                <a target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}{{ icon }}</a>
+                <a target="{{ item.target }}" href="{{ item.link }}"><span class="item-index">0{{ loop.index }} -</span>{{ item.title }}</a>
                 {% include "navigations/header/menu.html.twig" with {'menu': item.get_children, 'isChildren': true} %}
             </li>
         {% endfor %}

@@ -1,5 +1,6 @@
 import Menu from 'adeliom-menu-js';
 import "./styles.pcss"
+import "./mobile/styles.pcss"
 
 /**
  * Menu initialization

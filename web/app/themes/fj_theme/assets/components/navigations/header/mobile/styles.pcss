@@ -1,0 +1,84 @@
+.header-mobile {
+    @apply bg-primary-white;
+    @apply z-[100];
+    @apply relative;
+    @apply w-screen;
+    @apply lg:hidden;
+
+    &__container {
+        @apply flex items-center justify-between;
+        @apply h-[110px] w-full;
+        @apply z-10;
+    }
+
+    &__right {
+        @apply flex items-center;
+    }
+
+    &__burger {
+        @apply relative block lg:hidden;
+        @apply mr-2;
+        @apply w-[20px] h-[16px];
+        @apply rotate-0;
+        @apply cursor-pointer;
+        -webkit-transition: .5s ease-in-out;
+        -moz-transition: .5s ease-in-out;
+        -o-transition: .5s ease-in-out;
+        transition: .5s ease-in-out;
+        cursor: pointer;
+
+        span {
+            @apply absolute block h-[2px] w-full;
+            @apply bg-primary-dark;
+            @apply rounded-[1px] left-0;
+            @apply rotate-0;
+            -webkit-transition: .25s ease-in-out;
+            -moz-transition: .25s ease-in-out;
+            -o-transition: .25s ease-in-out;
+            transition: .25s ease-in-out;
+
+            &:nth-child(1) {
+                @apply top-0;
+                @apply origin-[left_center];
+            }
+
+            &:nth-child(2) {
+                @apply top-[6px];
+                @apply origin-[left_center];
+            }
+
+            &:nth-child(3) {
+                @apply top-3;
+                @apply origin-[left_center];
+            }
+        }
+
+
+        &.is-active {
+            span {
+                &:nth-child(1) {
+                    @apply rotate-45;
+                    @apply top-0 left-[3px];
+                }
+
+                &:nth-child(2) {
+                    @apply w-0 opacity-0;
+                }
+
+                &:nth-child(3) {
+                    @apply -rotate-45;
+                    @apply top-[14px] left-[3px];
+                }
+            }
+        }
+    }
+
+    &__logo {
+        @apply w-[88px];
+
+        img {
+            @apply w-[88px];
+        }
+    }
+
+}
