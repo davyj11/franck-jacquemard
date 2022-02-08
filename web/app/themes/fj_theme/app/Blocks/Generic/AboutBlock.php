@@ -51,7 +51,7 @@ class AboutBlock extends AbstractBlock
             ->returnFormat('array')
             ->required();
 
-        yield Text::make(__("Titre"), "title");
+        yield Text::make(__("Titre de la section"), "title")->required();
 
         yield WysiwygEditor::make(__("Texte"), "text")
             ->tabs('visual')
