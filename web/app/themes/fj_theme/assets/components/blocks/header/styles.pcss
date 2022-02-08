@@ -4,7 +4,25 @@
     @apply py-24 relative;
     @apply flex items-center;
 
+    &--home {
+        @apply h-[75vh];
+    }
+
     .w-img {
         @apply absolute-full;
+
+        &:after {
+            content: '';
+            @apply absolute-full;
+            background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 98.52%);
+        }
+
+        img {
+            @apply cover-full;
+        }
+    }
+
+    .w-content {
+
     }
 }

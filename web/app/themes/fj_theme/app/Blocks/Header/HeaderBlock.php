@@ -18,6 +18,10 @@ use WordPlate\Acf\Fields\Text;
  */
 class HeaderBlock extends AbstractBlock
 {
+    public static function getBlockName()
+    {
+        return 'acf/header-block';
+    }
 
     public function __construct()
     {
@@ -27,7 +31,10 @@ class HeaderBlock extends AbstractBlock
             'category'    => GutBlockName::HEADER,
             'post_types'  => GutenbergBlockHelper::commonsTemplate(),
             'mode'        => 'edit',
-            'multiple'    => false
+            'multiple'    => false,
+            'enqueue_assets' => function () {
+                wp_enqueue_style('header', get_template_directory_uri() . '/build/components/blocks/header/index.css');
+            },
         ]);
     }
 

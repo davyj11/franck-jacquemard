@@ -1,0 +1,42 @@
+{% import "./tools/_link.html.twig" as link %}
+
+<section class="flex-about">
+
+    <div class="top">
+        <div class="top__img">
+            {{ image(fields.img_top, 'large') }}
+        </div>
+        <div class="container">
+            <div class="top__inner">
+                <div class="top__text">
+                    {% if fields.title %}
+                        <h2 class="title h2">
+                            {{ fields.title }}
+                        </h2>
+                    {% endif %}
+
+                    {{ fields.text }}
+
+                    {% set btn = fields.btn_link %}
+
+                    {% if btn %}
+                        {{ link.link(btn.url, btn.title ? btn.title : __('Lire plus') , 'btn btn--primary', btn_link.target) }}
+                    {% endif %}
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="w-bottom">
+        <div class="bottom__text">
+
+        </div>
+        <div class="bottom__img">
+            {{ image(fields.img_bottom, 'large') }}
+        </div>
+    </div>
+
+
+</section>

@@ -1,0 +1,30 @@
+@import './../../../framework/tailwind.pcss';
+
+.flex-about {
+    @apply p-default relative;
+
+    .top {
+        @apply relative;
+
+        &__img {
+            @apply max-lg:h-80 max-lg:w-full;
+            @apply lg:w-1/2 lg:h-full lg:absolute lg:top-0 lg:left-0;
+
+            img {
+                @apply cover-full;
+            }
+        }
+
+        &__inner {
+            @apply lg:grid-cols-12;
+        }
+
+        &__text {
+            @apply lg:col-span-6 lg:col-end-6;
+        }
+    }
+
+    .w-bottom {
+
+    }
+}
