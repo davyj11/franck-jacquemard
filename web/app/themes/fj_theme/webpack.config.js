@@ -37,7 +37,7 @@ glob.sync(`./assets/templates/**/index.js`).forEach((jsFile) => {
 //Encore.addEntry('tailwind', './assets/framework/tailwind.js');
 
 Encore
-    .setPublicPath("./")
+    .setPublicPath("")
     .enableBuildNotifications()
     // directory where compiled assets will be stored
     .setOutputPath('build/')

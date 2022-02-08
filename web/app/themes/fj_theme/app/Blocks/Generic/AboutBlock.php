@@ -36,9 +36,7 @@ class AboutBlock extends AbstractBlock
             'category'    => GutBlockName::GENERIC,
             'post_types'  => GutenbergBlockHelper::commonsTemplate(),
             'mode'        => 'edit',
-            'enqueue_assets' => function () {
-                wp_enqueue_style('header', get_template_directory_uri() . '/build/components/blocks/about/index.css');
-            },
+            'dir' => 'views/blocks',
         ]);
     }
 

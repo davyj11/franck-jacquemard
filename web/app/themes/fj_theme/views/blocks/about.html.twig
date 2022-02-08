@@ -1,14 +1,13 @@
-{% import "./tools/_link.html.twig" as link %}
+{% from 'components/button/button.html.twig' import _button %}
 
-<section class="flex-about">
-
-    <div class="top">
-        <div class="top__img">
-            {{ image(fields.img_top, 'large') }}
+<section class="flex-about p-default relative xl:max-w-[1560px] xl:mx-auto">
+    <div class="top relative max-lg:flex max-lg:flex-col-reverse">
+        <div class="top__img max-lg:relative max-lg:h-80 max-lg:mt-10 max-lg:w-full lg:w-[47%] lg:h-full lg:absolute lg:top-0 lg:left-0">
+            {{ image(fields.img_top, 'large', 'cover-full') }}
         </div>
         <div class="container">
-            <div class="top__inner">
-                <div class="top__text">
+            <div class="top__inner lg:grid lg:grid-cols-12">
+                <div class="wysiwyg lg:col-span-6 lg:col-start-7 lg:pt-10 lg:pb-40 lg:pl-10">
                     {% if fields.title %}
                         <h2 class="title h2">
                             {{ fields.title }}
@@ -20,7 +19,12 @@
                     {% set btn = fields.btn_link %}
 
                     {% if btn %}
-                        {{ link.link(btn.url, btn.title ? btn.title : __('Lire plus') , 'btn btn--primary', btn_link.target) }}
+                        {{ _button({
+                            classes: 'mt-6 lg:mt-10',
+                            title: btn.title ?? __('Lire plus'),
+                            url: btn.url,
+                            type: "primary"
+                        }) }}
                     {% endif %}
                 </div>
             </div>
@@ -29,12 +33,26 @@
 
     </div>
 
-    <div class="w-bottom">
-        <div class="bottom__text">
-
+    <div class="bottom relative lg:flex lg:items-center lg:-mt-20">
+        <div class="container">
+            <div class="bottom__text flex items-center max-sm:flex-col max-lg:justify-center max-lg:mt-10 lg:pt-40 lg:pb-20">
+                {% if fields.number1 %}
+                    <div class="group text-center max-w-[160px]">
+                        <div class="xl5">{{ fields.number1.value }}</div>
+                        <p class="p mt-2 text-gray-04">{{ fields.number1.desc }}</p>
+                    </div>
+                {% endif %}
+                {% if fields.number2 %}
+                    <div class="group text-center max-sm:mt-4 sm:ml-6 max-w-[160px]">
+                        <div class="xl5">{{ fields.number2.value }}</div>
+                        <p class="p mt-2 text-gray-04">{{ fields.number2.desc }}</p>
+                    </div>
+                {% endif %}
+            </div>
         </div>
-        <div class="bottom__img">
-            {{ image(fields.img_bottom, 'large') }}
+
+        <div class="bottom__img max-lg:relative max-lg:h-80 max-lg:mt-10 max-lg:w-full lg:w-[58%] lg:h-full lg:absolute lg:top-0 lg:right-0">
+            {{ image(fields.img_bottom, 'large', 'cover-full') }}
         </div>
     </div>
 
