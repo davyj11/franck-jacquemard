@@ -1,0 +1,45 @@
+{% from 'components/button/button.html.twig' import _button %}
+
+<section class="last-realisations p-default overflow-hidden" js-reals>
+    <div class="container">
+        <div class="last-realisations__header grid gap-6 md:grid-cols-12">
+            <div class="title xl5 md:col-span-6 lg:col-span-5">{{ fields.title }}</div>
+            <div class="desc md:col-span-6 md:col-start-7 xl:col-span-5">
+                <div class="wysiwyg">
+                    {{ fields.text }}
+                    {% if fields.btn_link %}
+                        {{ _button({
+                            classes: 'mt-6 lg:mt-10',
+                            title: fields.btn_link.title ?? __('Lire plus'),
+                            url: fields.btn_link.url,
+                            type: "secondary"
+                        }) }}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <div class="slider swiper-container cursor-grab mt-8" js-reals-slider>
+            <div class="swiper-wrapper">
+                {% for image in fields.items %}
+                    <div class="swiper-slide slider__slide aspect-[3/5] relative w-[232px] lg:w-[264px]">
+                        {{ image(image.img, 'large', 'cover-full') }}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="w-btn flex items-center justify-end w-full mt-8">
+            <div class="control w-12 h-12 flex items-center justify-center border border-primary cursor-pointer" js-slider-prev>
+                <i class="gg-arrow-left"></i>
+            </div>
+            <div class="control w-12 h-12 flex items-center justify-center border border-primary cursor-pointer ml-4" js-slider-next>
+                <i class="gg-arrow-right"></i>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% block javascript %}
+{{ encore_entry_script_tags('components/blocks/last_realisations/index') }}
+{% endblock %}
