@@ -83,6 +83,7 @@ class ParametersAdmin extends AbstractAdmin
             ->instructions('Renseignez les liens des pages concernées')
             ->fields([
                 PostObject::make('Nous contacter', 'contact')->postTypes(['page'])->required(),
+                PostObject::make('Liste des témoignages', 'testimonies')->postTypes(['page'])->required(),
                 PostObject::make('Mentions légales', 'legals')->postTypes(['page'])->required(),
                 PostObject::make('Politique de confidentialité', 'confidential')->postTypes(['page'])->required(),
                 PostObject::make('Sitemap', 'sitemap')->postTypes(['page'])->required(),

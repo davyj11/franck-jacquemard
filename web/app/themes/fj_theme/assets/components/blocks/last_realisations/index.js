@@ -1,15 +1,9 @@
-
-
-console.log('yoo')
 import './styles.pcss'
-
 import Swiper, { Navigation, Autoplay } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
 Swiper.use([Navigation, Autoplay]);
-
-
 
 const selectors = {
     slider: '[js-reals-slider]',
@@ -24,13 +18,14 @@ const selectors = {
  */
 const sliderContainer = document.querySelector(selectors.container);
 
-const realisationsSlider = new Swiper(selectors.slider, {
-    slidesPerView: 'auto',
-    spaceBetween: 24,
-    navigation: {
-        nextEl: sliderContainer.querySelector(selectors.next),
-        prevEl: sliderContainer.querySelector(selectors.prev),
-    },
-});
+if (sliderContainer) {
+    const realisationsSlider = new Swiper(selectors.slider, {
+        slidesPerView: 'auto',
+        spaceBetween: 24,
+        navigation: {
+            nextEl: sliderContainer.querySelector(selectors.next),
+            prevEl: sliderContainer.querySelector(selectors.prev),
+        },
+    });
+}
 
-console.log(realisationsSlider)
