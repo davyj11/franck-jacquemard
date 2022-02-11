@@ -10,7 +10,7 @@
 <article class="card-review border border-primary p-10 flex flex-col {{ settings.classes }}">
     <div class="rating flex items-center">
         {% for i in 1..5 %}
-            {% set starClass = settings.rating|round(2) >= i - 0.25 ? "gg-arrow-right" : rating|round(2) >= i - 0.75 ? "icon-star-half" : "gg-arrow-left" %}
+            {% set starClass = settings.rating|round(2) >= i - 0.25 ? "icon-star" : rating|round(2) >= i - 0.75 ? "icon-star-half" : "icon-star-empty" %}
             <i class="{{ starClass }} rating__icon"></i>
         {% endfor %}
     </div>

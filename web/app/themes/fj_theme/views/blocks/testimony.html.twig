@@ -14,14 +14,16 @@
 
         <div class="bloc-textimony__list mt-10 lg:mt-12 -mx-3 -mb-6 flex flex-wrap justify-center">
             {% for item in fields.items %}
-                {{ dump(fn('get_field', 'title', item.ID)) }}
+                {% set post = getTimber(item.ID) %}
+                {% set card = post.meta('testi') %}
+
                 <div class="group">
                     {% include 'components/cards/card-review.html.twig' with {settings:{
-                        title: item.title,
-                        rating: item.rating,
-                        name: item.name,
-                        date: item.date,
-                        text: item.text,
+                        title: card.title,
+                        rating: card.rating,
+                        name: card.name,
+                        date: card.date,
+                        text: card.text,
                     }} %}
                 </div>
             {% endfor %}

@@ -14,5 +14,6 @@ return [
         \App\TwigExtensions\EncoreExtension::class,
         \App\TwigExtensions\ImageTwigExtension::class,
         \App\TwigExtensions\LinkTwigExtension::class,
+        \App\TwigExtensions\GetTimberPostExtension::class,
     ],
 ];

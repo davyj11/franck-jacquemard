@@ -19,7 +19,7 @@
         "cross-env": "^7.0.0",
         "dauphine-js": "https://github.com/agence-adeliom/dauphine-js.git",
         "dotenv": "^8.6.0",
-        "figmadeliom": "https://github.com/ThibautZanca/figmadeliom.git",
+        "figmadeliom": "git+https://github.com/agence-adeliom/figmadeliom.git",
         "path": "^0.12.7",
         "postcss-import": "^14.0.2",
         "swiper": "^7.4.1"
