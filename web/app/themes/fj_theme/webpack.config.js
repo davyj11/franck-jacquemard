@@ -89,8 +89,8 @@ Encore
     })
 
     .copyFiles({
-        from: './assets/fonts/icons/fonts',
-        to: 'fonts/[path][name].[hash:8].[ext]'
+        from: './assets/fonts/icomoon/fonts',
+        to: 'fonts/[path][name].[ext]'
     })
 
 // enables Sass/SCSS support

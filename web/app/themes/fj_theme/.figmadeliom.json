@@ -1,0 +1,11 @@
+{
+    "figma_personal_token": "323220-e8f2bc3b-519f-4208-b23d-76686c8f11bd",
+    "figma_file_key": "2dpv11tZiZwa9JkrgulyJn",
+    "figma_api_url": "https://api.figma.com/v1",
+    "node_ids": {
+        "icons": "3%3A272"
+    },
+    "outputIconsDir": "./assets/fonts/icons/svg",
+    "outputIconsKeepFolder": false,
+    "outputSassFile": "./assets/styles/core/helpers/_variables.scss"
+}
