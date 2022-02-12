@@ -12,6 +12,7 @@ use WordPlate\Acf\Fields\Link;
 use WordPlate\Acf\Fields\Tab;
 use WordPlate\Acf\Fields\Text;
 use WordPlate\Acf\Fields\Textarea;
+use WordPlate\Acf\Fields\WysiwygEditor;
 use WordPlate\Acf\Location;
 use WordPlate\Acf\Fields\Repeater;
 
@@ -55,18 +56,26 @@ class SharedBlockAdmin extends AbstractAdmin
     public static function getFields(): Traversable
     {
 
-        /* EXAMPLE TO OVERRIDE */
-        yield Tab::make(__("À votre écoute"));
-        yield Group::make("À votre écoute", "service")
-            ->instructions('Renseignez les données relatives au bloc "À votre écoute"')
+        yield Tab::make(__("Nous contacter"));
+        yield Group::make("Nous contacter", "contact")
+            ->instructions('Renseignez les données relatives au bloc "Nous contacter"')
             ->fields([
-                Text::make(__('Titre'), 'title'),
-                Textarea::make(__('Contenu'), 'content'),
-                Image::make('Image latérale', 'image')
-                    ->instructions(__('Ratio de l’image recommandée : 750 x 430'))
+                Text::make(__("Titre de la section"), "title")->required(),
+
+                WysiwygEditor::make(__("Description"), "text")
+                    ->tabs('visual')
+                    ->mediaUpload(false)
+                    ->required(),
+
+                \AcfUtils::button(),
+
+                Image::make(__("Image"), "img")
+                    ->library("all")
+                    ->previewSize("medium")
+                    ->returnFormat('array')
+                    ->required()
             ])
-            ->layout('row')
-        ;
+            ->layout('row');
 
     }
 
