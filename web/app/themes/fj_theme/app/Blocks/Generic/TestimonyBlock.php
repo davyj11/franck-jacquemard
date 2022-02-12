@@ -37,6 +37,10 @@ class TestimonyBlock extends AbstractBlock
             'post_types'  => GutenbergBlockHelper::commonsTemplate(),
             'mode'           => 'edit',
             'dir' => 'views/blocks',
+            'enqueue_assets' => function () {
+                wp_enqueue_style('testimony-block', get_template_directory_uri() . '/build/components/blocks/testimony/index.css');
+                wp_enqueue_script( 'testimony-block', get_template_directory_uri() . '/build/components/blocks/testimony/index.js', '', '', false );
+            },
         ]);
     }
 

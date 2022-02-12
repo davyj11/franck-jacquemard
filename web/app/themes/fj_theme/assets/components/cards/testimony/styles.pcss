@@ -1,0 +1,11 @@
+.card-review {
+    @apply border border-primary h-full p-6 lg:p-10 flex flex-col;
+
+    .rating {
+        &__icon {
+            & + i {
+                @apply ml-2;
+            }
+        }
+    }
+}

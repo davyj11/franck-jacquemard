@@ -38,6 +38,10 @@ module.exports = {
             'md': '1.125rem',
             'base': '1rem',
             'xs': '0.75rem',
+            'icon-xl': '2.5rem',
+            'icon-lg': '2rem',
+            'icon-md': '1.5rem',
+            'icon-sm': '1rem',
         },
         colors: {
             transparent: "transparent",

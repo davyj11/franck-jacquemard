@@ -7,15 +7,15 @@
 
 {% set settings = defaultSettings|merge(settings) %}
 
-<article class="card-review border border-primary p-10 flex flex-col {{ settings.classes }}">
+<article class="card-review {{ settings.classes }}">
     <div class="rating flex items-center">
         {% for i in 1..5 %}
             {% set starClass = settings.rating|round(2) >= i - 0.25 ? "icon-star" : rating|round(2) >= i - 0.75 ? "icon-star-half" : "icon-star-empty" %}
-            <i class="{{ starClass }} rating__icon"></i>
+            <i class="{{ starClass }} rating__icon text-icon-lg text-[#fc0]"></i>
         {% endfor %}
     </div>
-    <div class="xl2 mt-4">{{ settings.title }}</div>
+    <div class="xl2 mt-4 text-primary">{{ settings.title }}</div>
     <div class="wysiwyg mt-4">{{ settings.text }}</div>
-    <div class="mt-4 p-s font-bold text-primary">{{ settings.date }}</div>
-    <div class="p text-gray-05">{{ settings.name }}</div>
+    <div class="mt-4 p font-bold text-primary">Réalisation : {{ settings.date }}</div>
+    <div class="p-m text-gray-05">{{ settings.name }}</div>
 </article>
