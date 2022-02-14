@@ -1,41 +1,65 @@
-{% import "./tools/_link.html.twig" as link %}
+{% from 'components/button/button.html.twig' import _button %}
 
 {% set position = 'inner--' ~ fields.img_position %}
 
-<section class="w-flex flex-text-image {{ fields.bg }}">
+{% set imageClasses = 'relative w-full col-span-10 col-start-2 sm:col-span-8 sm:col-start-3' %}
+
+<section class="p-default flex-text-image {{ fields.bg }}">
 
     <div class="container">
-            <div class="inner {{ position }}">
+        <div class="inner grid grid-cols-12 gap-x-2 gap-y-10 lg:gap-6">
 
-                <div class="inner__text wysiwyg">
+            {% if fields.img_position == 'left' or fields.img_position == 'top' %}
+                <div class="inner__image {{ imageClasses }}
+                    {{ fields.img_position == 'top' ? ' aspect-[100/66] lg:col-span-8 lg:col-start-3 xl:col-span-6 xl:col-start-4' }}
+                    {{ fields.img_position == 'left' ? ' aspect-[3/4] lg:col-span-5 lg:col-start-2 lg:place-self-center xl:col-span-4' }}">
+                    {{ image(fields.img, 'large', 'cover-full z-10') }}
 
-                    {% if fields.title %}
-                        <h2 class="title h2">
-                            {{ fields.title }}
-                        </h2>
-                    {% endif %}
-
-                    {{ fields.text }}
-
-                    {% set btn = fields.btn_link %}
-
-                    {% if btn %}
-                        {{ link.link(btn.url, btn.title ? btn.title : __('Lire plus') , 'btn btn--primary', btn_link.target) }}
-                    {% endif %}
-
+                    <div class="img-bg absolute w-full h-full bg-primary-10 -top-4 -left-6 md:-top-14 md:-left-12"></div>
                 </div>
+            {% endif %}
 
-                <div class="inner__img">
-                    {% include './tools/_img.html.twig' with {'obj': {
-                        'class': 'img-full',
-                        'media': fields.img,
-                        'direction': true,
-                        'container': 'w-img',
-                    }
-                    } %}
-                </div>
+            <div class="inner__text wysiwyg w-full col-span-12 lg:col-span-6
+                {{ fields.text_centered ? 'text-center' }}
+                {{ fields.img_position == 'left' or fields.img_position == 'right' ? 'lg:place-self-center' }}
+                {{ fields.img_position == 'top' or fields.img_position == 'bottom' ? 'lg:col-span-8 lg:col-start-3' }}
+                {{ fields.img_position == 'left' ? 'lg:col-start-7' }}">
+
+                {% if fields.title %}
+                    <h2 class="title relative h2 {{ fields.img_position == 'left' or fields.img_position == 'right' ? 'lg:mb-10' }}">
+                        {{ fields.title }}
+                        {% if fields.img_position == 'left' or fields.img_position == 'right' %}
+                            <div class="title-underline max-lg:hidden w-[500px] absolute -bottom-3 -left-1/2 h-[1px] bg-secondary"></div>
+                        {% endif %}
+                    </h2>
+                {% endif %}
+
+                {{ fields.text }}
+
+                {% set btn = fields.btn_link %}
+
+                {% if btn %}
+                    {{ _button({
+                        classes: 'mt-8',
+                        title: btn.title ?? 'En savoir plus',
+                        url: btn.url,
+                        type: "secondary"
+                    }) }}
+                {% endif %}
 
             </div>
+
+            {% if fields.img_position == 'right' or fields.img_position == 'bottom' %}
+                <div class="inner__image {{ imageClasses }}
+                    {{ fields.img_position == 'bottom' ? ' aspect-[100/66] lg:col-span-8 lg:col-start-3 xl:col-span-6 xl:col-start-4' }}
+                    {{ fields.img_position == 'right' ? ' aspect-[3/4] lg:col-span-5 lg:col-start-8 lg:place-self-center xl:col-span-4' }}">
+                    {{ image(fields.img, 'large', 'cover-full z-10') }}
+
+                    <div class="img-bg absolute w-full h-full border-2 border-primary -bottom-3 -right-6 md:-bottom-6 md:-right-12"></div>
+                </div>
+            {% endif %}
+
         </div>
+    </div>
 
 </section>

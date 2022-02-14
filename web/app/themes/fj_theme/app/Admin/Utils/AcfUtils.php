@@ -30,10 +30,10 @@ class AcfUtils
         return RadioButton::make(__('Couleur de fond'), 'bg')
             ->instructions('Sélectionnez la couleur de fond de ce bloc.')
             ->choices([
-                'no-bg' => __('Sans fond'),
-                'on-dark' =>  __('Fond foncé'),
+                'bg-primary-white' => __('Fond blanc'),
+                'bg-gray-09' =>  __('Fond gris'),
             ])
-            ->defaultValue('no-bg')
+            ->defaultValue('bg-primary-white')
             ->returnFormat('value') // array, label or value (default)
             ->required();
     }

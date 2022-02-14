@@ -12,6 +12,7 @@ use WordPlate\Acf\Fields\Radio;
 use WordPlate\Acf\Fields\RadioButton;
 use WordPlate\Acf\Fields\Tab;
 use WordPlate\Acf\Fields\Text;
+use WordPlate\Acf\Fields\TrueFalse;
 use WordPlate\Acf\Fields\Wysiwyg;
 use WordPlate\Acf\Fields\WysiwygEditor;
 
@@ -28,7 +29,7 @@ class TextImageBlock extends AbstractBlock
         parent::__construct([
             'title'       => __('Texte + média'),
             'description' => __('Description : Bloc avec texte accolé à une image'),
-            'category'    => GutBlockName::LATEST,
+            'category'    => GutBlockName::GENERIC,
             'post_types'  => GutenbergBlockHelper::commonsTemplate(),
             'mode'        => 'edit'
         ]);
@@ -52,6 +53,9 @@ class TextImageBlock extends AbstractBlock
             ->tabs('visual')
             ->mediaUpload(false)
             ->required();
+
+        yield TrueFalse::make(__("Centrer le texte"), 'text_centered')
+            ->stylisedUi();
 
         yield \AcfUtils::button();
 
