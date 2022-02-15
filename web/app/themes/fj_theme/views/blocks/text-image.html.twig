@@ -1,7 +1,5 @@
 {% from 'components/button/button.html.twig' import _button %}
 
-{% set position = 'inner--' ~ fields.img_position %}
-
 {% set imageClasses = 'relative w-full col-span-10 col-start-2 sm:col-span-8 sm:col-start-3' %}
 
 <section class="p-default flex-text-image {{ fields.bg }}">
@@ -29,7 +27,8 @@
                     <h2 class="title relative h2 {{ fields.img_position == 'left' or fields.img_position == 'right' ? 'lg:mb-10' }}">
                         {{ fields.title }}
                         {% if fields.img_position == 'left' or fields.img_position == 'right' %}
-                            <div class="title-underline max-lg:hidden w-[500px] absolute -bottom-3 -left-1/2 h-[1px] bg-secondary"></div>
+                            <div class="title-underline max-lg:hidden w-[500px] absolute -bottom-3 h-[1px] bg-secondary
+                            {{ fields.img_position == 'right' ? '-right-1/2' : '-left-1/2' }}"></div>
                         {% endif %}
                     </h2>
                 {% endif %}
@@ -43,6 +42,7 @@
                         classes: 'mt-8',
                         title: btn.title ?? 'En savoir plus',
                         url: btn.url,
+                        target: btn.target,
                         type: "secondary"
                     }) }}
                 {% endif %}

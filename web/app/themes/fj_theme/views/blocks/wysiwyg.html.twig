@@ -1,16 +1,26 @@
-{% import "./tools/_link.html.twig" as link %}
+{% from 'components/button/button.html.twig' import _button %}
 
-<section class="w-flex flex-wysiwyg {{ fields.bg }}">
+<section class="p-default flex-wysiwyg {{ fields.bg }}">
 
     <div class="container">
 
-        <div class="wysiwyg">
+        <div class="wysiwyg lg:max-w-[80%] lg:mx-auto xl:max-w-[70%] {{ fields.text_centered ? 'text-center' }}">
+            {% if fields.title %}
+                <h2 class="h2">{{ fields.title }}</h2>
+            {% endif %}
+
             {{ fields.text }}
 
             {% set btn = fields.btn_link %}
 
             {% if btn %}
-                {{ link.link(btn.url, btn.title ? btn.title : __('Lire plus') , 'btn btn--primary', btn_link.target) }}
+                {{ _button({
+                    classes: 'mt-8',
+                    title: btn.title ?? 'En savoir plus',
+                    url: btn.url,
+                    target: btn.target,
+                    type: "secondary"
+                }) }}
             {% endif %}
 
         </div>

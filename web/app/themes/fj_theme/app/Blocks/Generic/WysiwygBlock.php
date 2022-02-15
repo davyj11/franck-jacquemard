@@ -9,6 +9,7 @@ use App\Helpers\Gutenberg\GutenbergBlockHelper;
 use WordPlate\Acf\Fields\Radio;
 use WordPlate\Acf\Fields\Tab;
 use WordPlate\Acf\Fields\Text;
+use WordPlate\Acf\Fields\TrueFalse;
 use WordPlate\Acf\Fields\Wysiwyg;
 use WordPlate\Acf\Fields\WysiwygEditor;
 
@@ -34,12 +35,17 @@ class WysiwygBlock extends AbstractBlock
     protected function registerFields(): \Traversable
     {
         yield Tab::make(__('Contenu'));
+        yield Text::make(__("Titre"), "title")->required();
+
         yield WysiwygEditor::make(__("Description"), "text")
             ->tabs('visual')
             ->mediaUpload(false)
             ->required();
 
         yield \AcfUtils::button();
+
+        yield TrueFalse::make(__("Centrer le texte"), 'text_centered')
+            ->stylisedUi();
 
         yield Tab::make(__('Mise en page'));
         yield \AcfUtils::withBg();
