@@ -1,0 +1,30 @@
+{% from 'components/button/button.html.twig' import _button %}
+
+<section class="p-default bloc-title-text {{ fields.bg }}">
+
+    <div class="container">
+        <div class="wrapper grid gap-6 lg:grid-cols-12">
+            <h2 class="title xl5 lg:col-span-5">{{ fields.title }}</h2>
+
+
+            <div class="wysiwyg lg:col-span-7">
+
+
+                {{ fields.text }}
+
+                {% set btn = fields.btn_link %}
+
+                {% if btn %}
+                    {{ _button({
+                        classes: 'mt-8',
+                        title: btn.title ?? 'En savoir plus',
+                        url: btn.url,
+                        target: btn.target,
+                        type: "secondary"
+                    }) }}
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+</section>
