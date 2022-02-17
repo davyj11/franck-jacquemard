@@ -27,9 +27,10 @@ class PageController extends Controller
         $context['page'] = $page;
         $context['title'] = $page->title;
         $context['content'] = $page->content;
-        $context['flex_content'] =  $page->meta('flex_content');
+        $context['flex_content'] = $page->meta('flex_content');
 
         $template = Lumberjack::passwordRender('templates/standard/standard.html.twig', $page->ID);
         return new TimberResponse($template, $context);
+
     }
 }
