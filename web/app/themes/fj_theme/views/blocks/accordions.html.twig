@@ -1,0 +1,89 @@
+{% from 'components/button/button.html.twig' import _button %}
+
+{% set imageClasses = 'relative w-full col-span-10 col-start-2 sm:col-span-8 sm:col-start-3' %}
+
+<section class="p-default flex-accordions" x-data="{ selected: null }">
+
+    <div class="container">
+
+        {% for item in fields.accordions %}
+            <div class="accordion">
+                <div
+                    class="group accordion-title cursor-pointer lg:hover:text-secondary transition-colors flex items-center justify-between py-4 md:py-6 border-b border-gray-07"
+                    @click="selected !== {{ loop.index }} ? selected = {{ loop.index }} : selected = null">
+                    <h2 class="xl5 lg:group-hover:text-secondary transition-colors"
+                        :class="selected === {{ loop.index }} ? 'text-secondary' : ''">{{ item.title }}</h2>
+                    <i class="text-icon-lg lg:text-icon-xl transition-transform transform-gpu"
+                       :class="selected === {{ loop.index }} ? 'text-secondary rotate-180 icon-minus' : 'icon-plus'"></i>
+                </div>
+                <div
+                    class="accordion-content relative overflow-y-clip transform-gpu transition-all max-h-0 duration-300"
+                    :style="selected === {{ loop.index }} ? `max-height:  ${ $el.scrollHeight }px` : ``">
+                    <div class="inner p-default grid grid-cols-12 gap-x-2 gap-y-10 lg:gap-6">
+
+                        {% if item.img_position == 'left' %}
+                            <div class="inner__image {{ imageClasses }}
+                    {{ item.img_position == 'left' ? ' aspect-[3/4] lg:col-span-5 lg:col-start-2 lg:place-self-center xl:col-span-4' }}
+                    {{ item.images|length > 1 ? 'mb-20' }}">
+                                {% for i in item.images %}
+                                    {% if loop.index == 1 %}
+                                        {{ image(i.img, 'large', 'cover-full z-10') }}
+                                        {% else %}
+                                        <div class="secondary-img aspect-[100/66] w-[90%] absolute -left-4 top-[70%] lg:-left-14 lg:top-[70%]">
+                                            {{ image(i.img, 'large', 'cover-full z-10') }}
+                                        </div>
+                                    {% endif %}
+
+                                {% endfor %}
+                                <div
+                                    class="img-bg absolute w-full h-full bg-primary-10 -top-4 -left-6 md:-top-14 md:-left-12"></div>
+                            </div>
+                        {% endif %}
+
+                        <div class="inner__text wysiwyg w-full col-span-12 lg:col-span-6
+                            {{ item.img_position == 'left' or item.img_position == 'right' ? 'lg:place-self-center' }}
+                            {{ item.img_position == 'left' ? 'lg:col-start-7' }}">
+
+                            {{ item.text }}
+
+                            {% set btn = item.btn_link %}
+
+                            {% if btn %}
+                                {{ _button({
+                                    classes: 'mt-8',
+                                    title: btn.title ?? 'En savoir plus',
+                                    url: btn.url,
+                                    target: btn.target,
+                                    type: "secondary"
+                                }) }}
+                            {% endif %}
+
+                        </div>
+
+                        {% if item.img_position == 'right' %}
+                            <div class="inner__image {{ imageClasses }}
+                                   {{ item.img_position == 'right' ? ' aspect-[3/4] lg:col-span-5 lg:col-start-8 lg:place-self-center xl:col-span-4' }}
+                                    {{ item.images|length > 1 ? 'mb-20' }}">
+                                {% for i in item.images %}
+                                    {% if loop.index == 1 %}
+                                        {{ image(i.img, 'large', 'cover-full z-10') }}
+                                    {% else %}
+                                        <div class="secondary-img aspect-[100/66] w-[90%] absolute -right-4 top-[90%] lg:-right-14 lg:top-[70%]">
+                                            {{ image(i.img, 'large', 'cover-full z-10') }}
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                                <div
+                                    class="img-bg absolute w-full h-full border-2 border-primary -bottom-3 -right-6 md:-bottom-6 md:-right-12"></div>
+                            </div>
+                        {% endif %}
+
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+
+
+    </div>
+
+</section>
