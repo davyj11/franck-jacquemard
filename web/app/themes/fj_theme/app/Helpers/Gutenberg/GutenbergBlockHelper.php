@@ -64,5 +64,12 @@ class GutenbergBlockHelper
         ];
     }
 
+    public static function contactTemplate()
+    {
+        return [
+            'contact'
+        ];
+    }
+
 
 }

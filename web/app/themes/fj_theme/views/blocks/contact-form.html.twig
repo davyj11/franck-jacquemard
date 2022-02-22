@@ -1,0 +1,23 @@
+{% from 'components/button/button.html.twig' import _button %}
+
+<section class="p-default bloc-contact">
+    <div class="container">
+        <div class="wrapper grid gap-6 lg:grid-cols-12">
+            <div class="w-form lg:col-span-8">
+                {% if fields.form %}
+                    {% filter shortcodes %}
+                        {{ fields.form }}
+                    {% endfilter %}
+                {% endif %}
+            </div>
+            <aside class="w-infos lg:sticky lg:top-40 lg:col-span-4 p-10 bg-primary dark h-fit xl:ml-10">
+                <p class="xl2">Nos coordonnées</p>
+
+                <a href="tel:{{ main_infos.phone }}" class="block mt-6">
+                    <p class="p-md item flex items-start"><i class="icon-phone mr-2 text-icon-md"></i>{{ main_infos.phone }}</p>
+                </a>
+                <p class="p-md item flex items-start mt-2"><i class="icon-home mr-2 text-icon-md"></i>{{ main_infos.address }}</p>
+            </aside>
+        </div>
+    </div>
+</section>

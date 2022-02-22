@@ -1,6 +1,10 @@
-.gform_wrapper.gravity-theme {
-    .gfield_label {
-        @apply p-s;
+.nf-form-wrap {
+    .nf-field-label label {
+        @apply p;
+
+        span {
+            @apply text-primary;
+        }
     }
 
     input[type="text"],
@@ -22,5 +26,51 @@
         @apply border border-gray-03 outline-secondary;
         @apply placeholder:p placeholder:text-gray-01;
         @apply p;
+    }
+
+    .nf-field-element {
+        @apply after:hidden;
+
+        input:not([type="button"]), textarea{
+            @apply rounded-md bg-white border border-gray-03 text-primary-black focus:outline-none transition-colors;
+            @apply placeholder:text-gray-05;
+        }
+    }
+
+    .nf-error-msg {
+        @apply p;
+        @apply text-alert-danger;
+        @apply flex items-center;
+
+        &:before {
+            content: var(--icon-information-circle);
+            /* use !important to prevent issues with browser extensions that change fonts */
+            font-family: 'icomoon' !important;
+            speak: never;
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+
+            /* Better Font Rendering =========== */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            @apply text-icon-md;
+            @apply mr-1;
+            @apply text-alert-danger;
+        }
+    }
+
+    .submit-wrap .nf-field-element {
+        @apply flex justify-end;
+    }
+
+    .success-message {
+        @apply flex flex-col items-center bg-primary-10 py-20 text-center px-6 md:px-10;
+    }
+
+    .nf-form-fields-required {
+        @apply hidden;
     }
 }

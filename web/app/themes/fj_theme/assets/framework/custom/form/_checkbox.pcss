@@ -1,25 +1,59 @@
-
-.gform_wrapper.gravity-theme {
-    .ginput_container_consent,
-    .gchoice {
-        @apply flex items-center;
-        @apply cursor-pointer;
-
-        & + .gchoice {
-            @apply mt-2;
+.nf-form-wrap {
+    .rgpd {
+        .nf-field-label {
+            @apply hidden;
         }
 
-        input[type="checkbox"] {
-            @apply w-6 h-6;
-            @apply mr-2.5;
-            @apply border border-gray-04;
-            @apply text-primary;
-            @apply focus:ring-transparent;
+        ul > li {
+            @apply p font-normal;
+            @apply inline-flex items-baseline;
             @apply cursor-pointer;
-        }
 
-        label {
-            @apply p;
+            input {
+                @apply hidden;
+            }
+
+            label {
+                @apply cursor-pointer ml-0 pl-10;
+                 &:before {
+                     content: "";
+                     @apply absolute w-6 h-6 bg-white transition-colors;
+                     @apply top-[3px] left-[1px];
+                     @apply border border-primary;
+                 }
+
+                 &:hover, &.nf-checked-label {
+
+                     &:before {
+                         @apply border-secondary bg-secondary;
+                     }
+
+                     &:after {
+                         @apply opacity-100;
+                     }
+
+                 }
+
+                &:after {
+                    @apply text-icon-md;
+                    content: var(--icon-check) !important;
+                    /* use !important to prevent issues with browser extensions that change fonts */
+                    font-family: 'icomoon' !important;
+                    speak: never;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-variant: normal;
+                    text-transform: none;
+                    line-height: 1;
+
+                    /* Better Font Rendering =========== */
+                    -webkit-font-smoothing: antialiased;
+                    -moz-osx-font-smoothing: grayscale;
+                    @apply absolute top-[3px] left-[1.5px];
+                    @apply opacity-0 text-white;
+                }
+
+            }
         }
     }
 }

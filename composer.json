@@ -95,7 +95,8 @@
         "roots/wp-stage-switcher": "^2.1",
         "deployer/deployer": "^6.8",
         "deployer/recipes": "^6.2",
-        "agence-adeliom/acf-icon-picker": "dev-master"
+        "agence-adeliom/acf-icon-picker": "dev-master",
+        "wpackagist-plugin/ninja-forms": "3.6.7"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "^3.5.8",
