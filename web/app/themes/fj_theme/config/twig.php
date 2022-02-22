@@ -15,5 +15,6 @@ return [
         \App\TwigExtensions\ImageTwigExtension::class,
         \App\TwigExtensions\LinkTwigExtension::class,
         \App\TwigExtensions\GetTimberPostExtension::class,
+        \App\TwigExtensions\ReviewsExtension::class,
     ],
 ];

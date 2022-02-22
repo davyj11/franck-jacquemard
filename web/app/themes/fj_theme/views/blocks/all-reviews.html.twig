@@ -1,0 +1,19 @@
+{% set reviews = getAllReviews() %}
+
+<section class="all-reviews p-default-bottom">
+    <div class="container">
+        <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+            {% for card in reviews %}
+                <div class="group">
+                    {% include 'components/cards/card-review.html.twig' with {settings:{
+                        title: card.testi_title,
+                        rating: card.testi_rating,
+                        name: card.testi_name,
+                        date: card.testi_date,
+                        text: card.testi_text,
+                    }} %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
