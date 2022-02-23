@@ -35,7 +35,7 @@ class GlobalHooks
 
         $options = get_fields("option");
 
-        $context['link'] = isset($options['link'] )? $options['link'] : null;
+        $context['const_pages'] = isset($options['const_pages'] )? $options['const_pages'] : null;
         $context['footer'] = isset($options['footer'] )? $options['footer'] : null;
         $context['main_infos'] = isset($options['main_infos'] )? $options['main_infos'] : null;
         $context['config'] = isset($options['config']) ?: null;

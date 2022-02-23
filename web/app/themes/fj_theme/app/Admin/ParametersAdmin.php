@@ -79,7 +79,7 @@ class ParametersAdmin extends AbstractAdmin
     {
 
         yield Tab::make(__("Liens"));
-        yield Group::make("Liens du site", "link")
+        yield Group::make("Liens du site", "const_pages")
             ->instructions('Renseignez les liens des pages concernées')
             ->fields([
                 PostObject::make('Nous contacter', 'contact')->postTypes(['page'])->required(),

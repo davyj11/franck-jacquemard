@@ -1,0 +1,24 @@
+{% extends "layout.html.twig" %}
+
+   {% block stylesheet %}
+       {{ parent() }}
+       {{ encore_entry_link_tags('templates/standard/index') }}
+   {% endblock %}
+
+{% block content %}
+    {{ content|raw }}
+    <section class="sitemap p-default">
+        <div class="container">
+            <div class="wysiwyg content-sitemap">
+                {{ function('do_shortcode', '[wp-realtime-sitemap]') }}
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block javascript %}
+{{ parent() }}
+{{ encore_entry_script_tags('templates/standard/index') }}
+{% endblock %}
+
+

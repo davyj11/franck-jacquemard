@@ -39,13 +39,13 @@
         <div class="footer-bottom py-6 border-t border-gray-03 flex flex-col items-center lg:flex-row lg:justify-between">
             <ul class="footer-bottom__links flex flex-col items-center sm:flex-row">
                 <li class="footer-bottom__link">
-                    <a href="{{ fn('get_permalink', link.legals.ID) }}" class="link">{{ link.legals.post_title }}</a>
+                    <a href="{{ fn('get_permalink', const_pages.legals.ID) }}" class="link">{{ const_pages.legals.post_title }}</a>
                 </li>
                 <li class="footer__link max-sm:my-4 sm:mx-2 sm:px-2 sm:border-x sm:border-gray-03">
-                    <a href="{{ fn('get_permalink', link.confidential.ID) }}" class="link">{{ link.confidential.post_title }}</a>
+                    <a href="{{ fn('get_permalink', const_pages.confidential.ID) }}" class="link">{{ const_pages.confidential.post_title }}</a>
                 </li>
                 <li class="footer__link">
-                    <a href="{{ fn('get_permalink', link.sitemap.ID) }}" class="link">{{ link.sitemap.post_title }}</a>
+                    <a href="{{ fn('get_permalink', const_pages.sitemap.ID) }}" class="link">{{ const_pages.sitemap.post_title }}</a>
                 </li>
             </ul>
             <span

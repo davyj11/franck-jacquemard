@@ -1,0 +1,29 @@
+<?php
+
+/* Template Name: Plan du site */
+
+namespace App;
+
+use App\Http\Controllers\Controller;
+use App\Http\Lumberjack;
+use Rareloop\Lumberjack\Http\Responses\TimberResponse;
+use Rareloop\Lumberjack\Page;
+use Timber\Timber;
+
+class TplSitemapController extends Controller
+{
+    public function handle()
+    {
+        $context = Timber::get_context();
+        $page = new Page();
+
+        $context['page'] = $page;
+        $context['title'] = $page->title;
+        $context['content'] = $page->content;
+        $context['flex_content'] = $page->meta('flex_content');
+
+        $template = Lumberjack::passwordRender('templates/sitemap.html.twig', $page->ID);
+        return new TimberResponse($template, $context);
+
+    }
+}

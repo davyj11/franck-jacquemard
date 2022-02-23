@@ -38,7 +38,6 @@ class WysiwygBlock extends AbstractBlock
         yield Text::make(__("Titre"), "title")->required();
 
         yield WysiwygEditor::make(__("Description"), "text")
-            ->tabs('visual')
             ->mediaUpload(false)
             ->required();
 

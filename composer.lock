@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fbd632c01d64234d7e15c4366eb741a1",
+    "content-hash": "af2ffc6fc9d2ee31f1c4082881e58d98",
     "packages": [
         {
             "name": "aaronadal/twig-list-loop",
@@ -11437,6 +11437,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/worker/"
+        },
+        {
+            "name": "wpackagist-plugin/wp-realtime-sitemap",
+            "version": "1.5.7",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wp-realtime-sitemap/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-realtime-sitemap.zip?timestamp=1501581773"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wp-realtime-sitemap/"
         }
     ],
     "packages-dev": [

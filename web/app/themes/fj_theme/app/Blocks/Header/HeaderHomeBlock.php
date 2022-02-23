@@ -33,7 +33,7 @@ class HeaderHomeBlock extends AbstractBlock
             'category'    => GutBlockName::HEADER_HOME,
             'post_types'  => GutenbergBlockHelper::commonsTemplate(),
             'mode'        => 'edit',
-            'dir' => 'views/blocks/header',
+            'dir'         => 'views/blocks/header',
             'multiple'    => false,
             'enqueue_assets' => function () {
                 wp_enqueue_style('header', get_template_directory_uri() . '/build/components/blocks/header/index.css');
