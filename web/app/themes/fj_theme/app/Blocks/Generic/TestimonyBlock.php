@@ -31,7 +31,7 @@ class TestimonyBlock extends AbstractBlock
     public function __construct()
     {
         parent::__construct([
-            'title'       => __('Témoignages'),
+            'title'       => __('Remontée 3 témoignages'),
             'description' => __('Bloc remontant 3 témoignages'),
             'category'    => GutBlockName::GENERIC,
             'post_types'  => GutenbergBlockHelper::commonsTemplate(),
