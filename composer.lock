@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "af2ffc6fc9d2ee31f1c4082881e58d98",
+    "content-hash": "05ca4dcdf6be144b59c03ce5e45d6cb9",
     "packages": [
         {
             "name": "aaronadal/twig-list-loop",
@@ -11421,6 +11421,24 @@
             "homepage": "https://wordpress.org/plugins/ninja-forms/"
         },
         {
+            "name": "wpackagist-plugin/wordpress-seo",
+            "version": "18.2",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
+                "reference": "tags/18.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.18.2.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wordpress-seo/"
+        },
+        {
             "name": "wpackagist-plugin/worker",
             "version": "4.9.13",
             "source": {
@@ -11437,6 +11455,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/worker/"
+        },
+        {
+            "name": "wpackagist-plugin/wp-migrate-db",
+            "version": "2.2.2",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wp-migrate-db/",
+                "reference": "tags/2.2.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-migrate-db.2.2.2.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wp-migrate-db/"
         },
         {
             "name": "wpackagist-plugin/wp-realtime-sitemap",
@@ -11458,6 +11494,43 @@
         }
     ],
     "packages-dev": [
+        {
+            "name": "deployer/dist",
+            "version": "v6.8.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/deployphp/distribution.git",
+                "reference": "857158fa5466d5135ce87f07fe67779b6b6a13d2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/deployphp/distribution/zipball/857158fa5466d5135ce87f07fe67779b6b6a13d2",
+                "reference": "857158fa5466d5135ce87f07fe67779b6b6a13d2",
+                "shasum": ""
+            },
+            "bin": [
+                "dep"
+            ],
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Anton Medvedev",
+                    "email": "anton@medv.io"
+                }
+            ],
+            "description": "Deployer Phar Distribution",
+            "homepage": "https://deployer.org",
+            "support": {
+                "docs": "https://deployer.org/docs",
+                "issues": "https://github.com/deployphp/deployer/issues",
+                "source": "https://github.com/deployphp/deployer"
+            },
+            "time": "2020-04-25T18:48:50+00:00"
+        },
         {
             "name": "roave/security-advisories",
             "version": "dev-master",

@@ -111,6 +111,13 @@ class ParametersAdmin extends AbstractAdmin
             ])
             ->layout('row');
 
+        yield Tab::make(__("Autres"));
+        yield Group::make("Autres", "other")
+            ->fields([
+                Textarea::make("Texte de la description", 'body_script')->required(),
+            ])
+            ->layout('row');
+
 
 //        $forms = [];
 //        foreach (self::getForms() as $key => $label) {

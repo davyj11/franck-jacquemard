@@ -27,10 +27,10 @@ require 'recipe/sentry.php';
  *************************************************/
 
 // Project name
-set('application', 'application-name');
+set('application', 'franck-jacquemard');
 
 // Project repository
-set('repository_name', 'agence-adeliom/repository_name');
+set('repository_name', 'davyj11/franck-jacquemard');
 set('repository', 'git@github.com:{{repository_name}}.git');
 
 
@@ -99,14 +99,14 @@ set('bin/composer', function () {
  **************************************************/
 
 //Example for staging on adev3.ovh
-/*host('staging')
-    ->hostname('exemple.adev3.ovh')
-    ->user('adev3-ovh')
-    //->identityFile("~/.ssh/id_adev3")
+host('prod')
+    ->hostname('ssh.cluster031.hosting.ovh.net')
+    ->user('jacquev')
+    ->identityFile("~/.ssh/id_rsa")
     ->port(22)
-    ->set('deploy_path', '/var/www/vhosts/adev3.ovh/exemple.adev3.ovh')
-    ->set('bin/php', "/opt/plesk/php/7.4/bin/php -d memory_limit=-1")
-    ->set('node_path', "/opt/plesk/node/v14.16.1/bin/")
+    ->set('deploy_path', '/homez.1671/jacquev/www')
+    ->set('bin/php', "php -d memory_limit=-1")
+  //  ->set('node_path', "/opt/plesk/node/v14.16.1/bin/")
     ->set('export_node_path', true)
     ->set('keep_releases', 3)
     ->set('bin/npm', "{{node_path}}npm --scripts-prepend-node-path=true")
@@ -117,7 +117,7 @@ set('bin/composer', function () {
     ->multiplexing(true)
     ->addSshOption('UserKnownHostsFile', '/dev/null')
     ->addSshOption('StrictHostKeyChecking', 'no');
-*/
+
 
 /**************************************************
  *
@@ -126,7 +126,7 @@ set('bin/composer', function () {
  **************************************************/
 
 task('npm:build', function () {
-    $cmd = "cd {{release_path}}/web/app/themes/lumberjack && {{bin/npm}} run build:production";
+    $cmd = "cd {{release_path}}/web/app/themes/fj_theme && {{bin/npm}} run build:production";
     if (get("export_node_path")) {
         $cmd = 'export PATH={{node_path}}:$PATH && ' . $cmd;
     }
@@ -136,11 +136,11 @@ task('npm:build', function () {
 
 task('npm:install', function () {
     if (has('previous_release')) {
-        if (test('[ -d {{previous_release}}/web/app/themes/lumberjack/node_modules]')) {
-            run('cp -R {{previous_release}}/web/app/themes/lumberjack/node_modules {{release_path}}/web/app/themes/lumberjack');
+        if (test('[ -d {{previous_release}}/web/app/themes/fj_theme/node_modules]')) {
+            run('cp -R {{previous_release}}/web/app/themes/fj_theme/node_modules {{release_path}}/web/app/themes/fj_theme');
         }
     }
-    run('cd {{release_path}}/web/app/themes/lumberjack && {{bin/npm}} install');
+    run('cd {{release_path}}/web/app/themes/fj_theme && {{bin/npm}} install');
 });
 
 task('dotenv:set-env', function () {
