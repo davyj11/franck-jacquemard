@@ -102,7 +102,7 @@ set('bin/composer', function () {
 host('prod')
     ->hostname('ssh.cluster031.hosting.ovh.net')
     ->user('jacquev')
-    ->identityFile("~/.ssh/id_rsa")
+   // ->identityFile("~/.ssh/id_perso")
     ->port(22)
     ->set('deploy_path', '/homez.1671/jacquev/www')
     ->set('bin/php', "php -d memory_limit=-1")
