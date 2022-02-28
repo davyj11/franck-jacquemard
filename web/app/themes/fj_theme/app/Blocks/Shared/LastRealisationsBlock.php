@@ -7,6 +7,7 @@ use App\Admin\Utils\Helpers;
 use App\Enum\GutBlockName;
 use App\Helpers\Gutenberg\GutenbergBlockHelper;
 use WordPlate\Acf\Fields\Image;
+use WordPlate\Acf\Fields\Message;
 use WordPlate\Acf\Fields\Radio;
 use WordPlate\Acf\Fields\Repeater;
 use WordPlate\Acf\Fields\Tab;
@@ -34,7 +35,7 @@ class LastRealisationsBlock extends AbstractBlock
             'category'    => GutBlockName::GENERIC,
             'post_types'  => GutenbergBlockHelper::commonsTemplate(),
             'mode'           => 'edit',
-            'dir' => 'views/blocks',
+            'dir' => 'views/blocks/shared',
             'enqueue_assets' => function () {
                 wp_enqueue_style('realisations-block', get_template_directory_uri() . '/build/components/blocks/last_realisations/index.css');
                 wp_enqueue_script( 'realisations-block', get_template_directory_uri() . '/build/components/blocks/last_realisations/index.js', '', '', false );
@@ -44,24 +45,8 @@ class LastRealisationsBlock extends AbstractBlock
 
     protected function registerFields(): \Traversable
     {
-        yield Text::make(__("Titre de la section"), "title")->required();
-
-        yield WysiwygEditor::make(__("Texte"), "text")
-            ->tabs('visual')
-            ->mediaUpload(false)
-            ->required();
-
-        yield \AcfUtils::button();
-
-        yield Repeater::make(__('Images'), 'items')
-            ->fields([
-                Image::make(__("Image"), "img")
-                    ->library("all")
-                    ->previewSize("medium")
-                    ->returnFormat('array')
-                    ->required(),
-            ])
-            ->min(5)->max(20);
+        yield Message::make(__('Message', ''))
+            ->message(__('Cette section affiche automatiquement le bloc "Nos dernières réalisations" de <a href="/wp/wp-admin/admin.php?page=blocs_partagés">cette page</a>'));
     }
 
 }

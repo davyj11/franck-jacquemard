@@ -15,7 +15,7 @@ class GeneralHooks
     {
         wp_enqueue_style(
             'editor',
-            get_theme_file_uri('/build/styles/editor.css'),
+            get_theme_file_uri('/build/editor.css'),
             false
         );
     }

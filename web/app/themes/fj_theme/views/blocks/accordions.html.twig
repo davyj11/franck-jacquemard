@@ -23,7 +23,7 @@
 
                         {% if item.img_position == 'left' %}
                             <div class="inner__image {{ imageClasses }}
-                    {{ item.img_position == 'left' ? ' aspect-[3/4] lg:col-span-5 lg:col-start-2 lg:place-self-center xl:col-span-4' }}
+                    {{ item.img_position == 'left' ? ' aspect-[3/4] lg:col-span-5 lg:col-start-2 lg:place-self-center xl:col-span-4 xl:col-start-2' }}
                     {{ item.images|length > 1 ? 'mb-20' }}">
                                 {% for i in item.images %}
                                     {% if loop.index == 1 %}
@@ -62,7 +62,7 @@
 
                         {% if item.img_position == 'right' %}
                             <div class="inner__image {{ imageClasses }}
-                                   {{ item.img_position == 'right' ? ' aspect-[3/4] lg:col-span-5 lg:col-start-8 lg:place-self-center xl:col-span-4' }}
+                                   {{ item.img_position == 'right' ? ' aspect-[3/4] lg:col-span-5 lg:col-start-8 lg:place-self-center xl:col-span-4 xl:col-start-8' }}
                                     {{ item.images|length > 1 ? 'mb-20' }}">
                                 {% for i in item.images %}
                                     {% if loop.index == 1 %}

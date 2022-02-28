@@ -14,9 +14,7 @@
 }
 
 .interface-complementary-area {
-    @include breakpoint(sm) {
-        width: 25vw;
-    }
+    @apply sm:w-[25vw];
 }
 
 .editor-styles-wrapper {
@@ -101,4 +99,8 @@
     font-size: rem(40);
     font-style: italic;
     color:red;
+}
+
+.block-editor__container img {
+    height: inherit;
 }

@@ -51,6 +51,7 @@ class ThreeColumnsBlock extends AbstractBlock
         yield Textarea::make(__("Texte de la section (optionnel)"), "text");
         yield Repeater::make(__('Colonnes'), 'columns')
             ->fields([
+                Text::make(__("Code de l'icon"), "icon"),
                 Text::make(__("Titre de la colonne"), "title")->required(),
                 WysiwygEditor::make(__("Texte de la colonne"), "text")
                     ->required()

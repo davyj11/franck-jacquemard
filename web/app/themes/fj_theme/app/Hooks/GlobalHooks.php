@@ -57,7 +57,6 @@ class GlobalHooks
     public static function breadcrumbOverride($links){
 
         global $post;
-        $const = get_fields("option")['link'];
         $postTypes = [
             // Sector::getPostType() => $const['all_sectors']
         ];

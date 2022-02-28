@@ -77,6 +77,29 @@ class SharedBlockAdmin extends AbstractAdmin
             ])
             ->layout('row');
 
+        yield Tab::make(__('Nos dernières réalisations'));
+        yield Group::make(__('Nos dernières réalisations'), 'last_reals')
+            ->fields([
+                Text::make(__("Titre de la section"), "title")->required(),
+
+                WysiwygEditor::make(__("Texte"), "text")
+                    ->tabs('visual')
+                    ->mediaUpload(false)
+                    ->required(),
+
+                \AcfUtils::button(),
+
+                Repeater::make(__('Images'), 'items')
+                    ->fields([
+                        Image::make(__("Image"), "img")
+                            ->library("all")
+                            ->previewSize("medium")
+                            ->returnFormat('array')
+                            ->required(),
+                    ])
+                    ->min(5)->max(20),
+            ]);
+
     }
 
     /**

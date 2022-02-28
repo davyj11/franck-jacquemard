@@ -101,7 +101,7 @@ class ParametersAdmin extends AbstractAdmin
             ->layout('row');
 
 
-        yield Tab::make(__("Footer"));
+        yield Tab::make(__("Footer"), 'footer_tab');
         yield Group::make("Footer", "footer")
             ->instructions('Renseignez les informations du pied de page')
             ->fields([
