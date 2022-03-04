@@ -5,7 +5,8 @@
 
 <section class="all-realisations">
     <div class="container">
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-[1fr]">
+       {#
+       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-[1fr]">
             {% for img in fields.gallery %}
                 <div class="w-img relative overflow-hidden
                 {{ cycle([bigSquare, landscape, landscape, '', '', '', '', landscape, bigSquare, landscape, '', '', landscape], loop.index0) }}">
@@ -13,5 +14,24 @@
                 </div>
             {% endfor %}
         </div>
+       #}
+        <div class="masonry" js-masonry>
+            <div class="sizer w-1/4" js-sizer></div>
+            {% for img in fields.gallery %}
+                {% if img.width > img.height %}
+                    {% set width = 'w-[50%]' %}
+
+                    {% else %}
+                        {% set width = 'w-[25%]' %}
+                {% endif %}
+                <div class="w-img p-2 {{ width }}" js-masonry-item>
+                    {{ image(img, 'large') }}
+                </div>
+            {% endfor %}
+        </div>
     </div>
 </section>
+
+{% block javascript %}
+{{ encore_entry_script_tags('components/blocks/all_realisations/index') }}
+{% endblock %}

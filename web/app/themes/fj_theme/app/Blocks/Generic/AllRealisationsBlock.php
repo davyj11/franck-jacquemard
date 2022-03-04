@@ -39,7 +39,7 @@ class AllRealisationsBlock extends AbstractBlock
             'multiple'    => false,
             'enqueue_assets' => function () {
                 //wp_enqueue_style('realisations-block', get_template_directory_uri() . '/build/components/blocks/last_realisations/index.css');
-                //wp_enqueue_script( 'realisations-block', get_template_directory_uri() . '/build/components/blocks/last_realisations/index.js', '', '', false );
+                wp_enqueue_script( 'all-realisations-block', get_template_directory_uri() . '/build/components/blocks/all_realisations/index.js', '', '', false );
             },
         ]);
     }
