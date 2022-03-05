@@ -40,6 +40,11 @@ class GeneralHooks
                     'icon'  => '',
                 ],
                 [
+                    'slug'  => 'before-after',
+                    'title' => __('Avant / après', ''),
+                    'icon'  => '',
+                ],
+                [
                     'slug'  => 'other',
                     'title' => __('Autre', ''),
                 ]

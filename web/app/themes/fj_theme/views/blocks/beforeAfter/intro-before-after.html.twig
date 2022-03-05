@@ -1,0 +1,36 @@
+{% from 'components/button/button.html.twig' import _button %}
+
+<section class="intro-before-after p-default overflow-hidden">
+    <div class="container">
+        <div class="inner lg:grid lg:grid-cols-12 lg:gap-6">
+            <div class="inner__text wysiwyg w-full col-span-12 lg:col-span-6 lg:place-self-center">
+
+                {% if fields.title %}
+                    <h2 class="title relative h2">
+                        {{ fields.title }}
+                    </h2>
+                {% endif %}
+
+                {{ fields.text }}
+
+                {% set btn = fields.btn_link %}
+
+                {% if btn %}
+                    {{ _button({
+                        classes: 'mt-8',
+                        title: btn.title ?? 'En savoir plus',
+                        url: btn.url,
+                        target: btn.target,
+                        type: "secondary"
+                    }) }}
+                {% endif %}
+
+            </div>
+
+            <div class="max-lg:mt-10 lg:col-span-6 lg:col-start-7">
+                {% include 'components/slider/before_after.html.twig' with {img_before: fields.img_before, img_after: fields.img_after} %}
+            </div>
+
+        </div>
+    </div>
+</section>

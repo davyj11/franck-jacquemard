@@ -8,5 +8,6 @@ final class GutBlockName
     public const HEADER_HOME = 'header';
     public const LATEST = 'latest';
     public const SHARED = 'shared';
+    public const BEFORE_AFTER = 'before-after';
     public const CTA = 'cta';
 }

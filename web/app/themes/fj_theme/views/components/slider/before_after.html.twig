@@ -1,0 +1,18 @@
+{% if img_before is defined and img_before %}
+    {% if img_before.height > img_before.width %}
+        {% set ratio = 'aspect-[11/18] md:w-1/2 lg:w-2/3 xl:1/2' %}
+    {% else %}
+        {% set ratio = 'aspect-[18/11]' %}
+    {% endif %}
+    <div class="w-full w-slider place-self-center {{ ratio }} relative" x-data="{ value: 50 }">
+        <div class="absolute w-full h-full top-0 left-0 overflow-hidden">
+            {{ image(img_after, 'large', 'cover-full object-left') }}
+            <div class="img overflow-hidden absolute top-0 left-0 h-full bg-cover border-r-2 border-white" :style="`width:  ${ value }%`">
+                {{ image(img_before, 'large', 'cover-full object-left') }}
+            </div>
+        </div>
+
+        <input type="range" min="0" max="100" value="50" class="slider" name='slider' @input="value = $event.target.value">
+        <div class="cursor icon- absolute top-1/2 left-1/2 w-10 h-10 rounded-full bg-white pointer-events-none" :style="`left:  ${ value }%`"></div>
+    </div>
+{% endif %}

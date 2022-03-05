@@ -1,0 +1,11 @@
+{% from 'components/button/button.html.twig' import _button %}
+
+<section class="all-before-after p-default overflow-hidden">
+    <div class="container">
+        <div class="grid gap-10 lg:grid-cols-2 place-item-centers">
+            {% for item in fields.items %}
+               {% include 'components/slider/before_after.html.twig' with {img_before: item.img_before, img_after: item.img_after} %}
+            {% endfor %}
+        </div>
+    </div>
+</section>

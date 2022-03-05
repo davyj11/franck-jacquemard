@@ -1,0 +1,28 @@
+.w-slider {
+
+    .slider {
+        @apply absolute appearance-none h-full top-0 left-[-20px] flex items-center justify-center outline-none m-0 bg-transparent;
+        -webkit-appearance: none;
+        width: calc(100% + 40px);
+
+        &::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            @apply appearance-none w-10 h-10 bg-transparent cursor-pointer rounded-full shadow-sm;
+        }
+    }
+    .cursor {
+         transform: translate(calc(-50% - 1px), -50%);
+         &:before, &:after {
+             @apply absolute top-1/2 -translate-y-1/2 text-icon-sm;
+         }
+         &:before {
+             content: var(--icon-chevron-left);
+             @apply left-1;
+         }
+         &:after {
+             content: var(--icon-chevron-right);
+             @apply right-1;
+         }
+     }
+}
+

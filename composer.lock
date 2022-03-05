@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "05ca4dcdf6be144b59c03ce5e45d6cb9",
+    "content-hash": "1ee826eacf3640548016b42545d00563",
     "packages": [
         {
             "name": "aaronadal/twig-list-loop",
@@ -11401,6 +11401,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/disable-comments/"
+        },
+        {
+            "name": "wpackagist-plugin/folders",
+            "version": "2.7.5",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/folders/",
+                "reference": "tags/2.7.5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/folders.2.7.5.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/folders/"
         },
         {
             "name": "wpackagist-plugin/ninja-forms",
