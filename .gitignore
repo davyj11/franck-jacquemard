@@ -34,5 +34,6 @@ wp-cli.local.yml
 
 .composer
 .idea
+auth.json
 
 _mutagen/config.yml.lock
