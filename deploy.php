@@ -41,7 +41,8 @@ set('git_cache', true);
 // Shared files/dirs between deploys
 set('shared_dirs', [
     'web/app/uploads',
-    'web/app/_sessions'
+    'web/app/_sessions',
+    'auth.json'
 ]);
 
 // Writable dirs by web server
@@ -104,7 +105,7 @@ host('prod')
     ->user('jacquev')
    // ->identityFile("~/.ssh/id_perso")
     ->port(22)
-    ->set('deploy_path', '/homez.1671/jacquev/www/root/')
+    ->set('deploy_path', '/homez.1671/jacquev/www/')
     ->set('bin/php', "php -d memory_limit=-1")
   //  ->set('node_path', "/opt/plesk/node/v14.16.1/bin/")
     ->set('export_node_path', true)

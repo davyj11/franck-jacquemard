@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1ee826eacf3640548016b42545d00563",
+    "content-hash": "4d948f9010a6de5b600a46d739be0fe1",
     "packages": [
         {
             "name": "aaronadal/twig-list-loop",
@@ -197,19 +197,6 @@
                 "source": "https://github.com/agence-adeliom/lumberjack-extensions/tree/v1.3.2"
             },
             "time": "2022-02-11T12:16:28+00:00"
-        },
-        {
-            "name": "advanced-custom-fields/advanced-custom-fields-pro",
-            "version": "5.9.2",
-            "dist": {
-                "type": "zip",
-                "url": "https://connect.advancedcustomfields.com/v2/plugins/download?p=pro&k=b3JkZXJfaWQ9NDA2OTZ8dHlwZT1kZXZlbG9wZXJ8ZGF0ZT0yMDE0LTA5LTI2IDEzOjUzOjI1&t=5.9.2"
-            },
-            "require": {
-                "composer/installers": "^1.7",
-                "ffraenz/private-composer-installer": "^5.0"
-            },
-            "type": "wordpress-muplugin"
         },
         {
             "name": "agence-adeliom/acf-icon-picker",
@@ -2124,73 +2111,6 @@
             },
             "abandoned": true,
             "time": "2015-11-16T23:29:15+00:00"
-        },
-        {
-            "name": "ffraenz/private-composer-installer",
-            "version": "v5.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ffraenz/private-composer-installer.git",
-                "reference": "8655e3da4e8f99203f13ccca33b9ab953ad30a31"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ffraenz/private-composer-installer/zipball/8655e3da4e8f99203f13ccca33b9ab953ad30a31",
-                "reference": "8655e3da4e8f99203f13ccca33b9ab953ad30a31",
-                "shasum": ""
-            },
-            "require": {
-                "composer-plugin-api": "^1.0 || ^2.0",
-                "php": "^7.1 || ^8.0",
-                "vlucas/phpdotenv": "^4.1 || ^5.2"
-            },
-            "require-dev": {
-                "composer/composer": "^1.0 || ^2.0",
-                "laminas/laminas-coding-standard": "^2.0",
-                "symfony/phpunit-bridge": "^5.1",
-                "symfony/process": "^4.4 || ^5.1"
-            },
-            "type": "composer-plugin",
-            "extra": {
-                "class": "FFraenz\\PrivateComposerInstaller\\Plugin",
-                "plugin-modifies-downloads": true
-            },
-            "autoload": {
-                "psr-4": {
-                    "FFraenz\\PrivateComposerInstaller\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fränz Friederes",
-                    "email": "fraenz@frieder.es",
-                    "homepage": "https://fraenz.frieder.es"
-                }
-            ],
-            "description": "A composer install helper for private packages",
-            "keywords": [
-                "composer",
-                "env",
-                "plugin",
-                "private",
-                "wordpress",
-                "wp"
-            ],
-            "support": {
-                "issues": "https://github.com/ffraenz/private-composer-installer/issues",
-                "source": "https://github.com/ffraenz/private-composer-installer/tree/v5.0.1"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/ffraenz",
-                    "type": "github"
-                }
-            ],
-            "time": "2020-10-30T09:35:33+00:00"
         },
         {
             "name": "gettext/gettext",
