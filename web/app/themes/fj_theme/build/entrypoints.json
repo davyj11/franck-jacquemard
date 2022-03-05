@@ -1,0 +1,105 @@
+{
+  "entrypoints": {
+    "tailwind": {
+      "js": [
+        "/runtime.js",
+        "/vendors-node_modules_alpinejs_dist_module_esm_js.js",
+        "/tailwind.js"
+      ],
+      "css": [
+        "/tailwind.css"
+      ]
+    },
+    "components/blocks/all_before_after/index": {
+      "js": [
+        "/runtime.js",
+        "/components/blocks/all_before_after/index.js"
+      ],
+      "css": [
+        "/components/blocks/all_before_after/index.css"
+      ]
+    },
+    "components/blocks/all_realisations/index": {
+      "js": [
+        "/runtime.js",
+        "/vendors-node_modules_masonry-layout_masonry_js.js",
+        "/components/blocks/all_realisations/index.js"
+      ]
+    },
+    "components/blocks/header/index": {
+      "js": [
+        "/runtime.js",
+        "/components/blocks/header/index.js"
+      ],
+      "css": [
+        "/components/blocks/header/index.css"
+      ]
+    },
+    "components/blocks/intro_before_after/index": {
+      "js": [
+        "/runtime.js",
+        "/components/blocks/intro_before_after/index.js"
+      ],
+      "css": [
+        "/components/blocks/intro_before_after/index.css"
+      ]
+    },
+    "components/blocks/last_realisations/index": {
+      "js": [
+        "/runtime.js",
+        "/vendors-node_modules_swiper_modules_navigation_navigation_min_css-node_modules_swiper_swiper_-798489.js",
+        "/components/blocks/last_realisations/index.js"
+      ],
+      "css": [
+        "/components/blocks/last_realisations/index.css"
+      ]
+    },
+    "components/blocks/testimony/index": {
+      "js": [
+        "/runtime.js",
+        "/components/blocks/testimony/index.js"
+      ],
+      "css": [
+        "/components/blocks/testimony/index.css"
+      ]
+    },
+    "components/cards/testimony/index": {
+      "js": [
+        "/runtime.js",
+        "/components/cards/testimony/index.js"
+      ],
+      "css": [
+        "/components/cards/testimony/index.css"
+      ]
+    },
+    "components/navigations/header/index": {
+      "js": [
+        "/runtime.js",
+        "/vendors-node_modules_adeliom-menu-js_dist_menu_js.js",
+        "/components/navigations/header/index.js"
+      ],
+      "css": [
+        "/assets_components_navigations_header_mobile_styles_pcss-assets_components_navigations_header_-6c1c97.css"
+      ]
+    },
+    "templates/standard/index": {
+      "js": [
+        "/runtime.js",
+        "/vendors-node_modules_adeliom-menu-js_dist_menu_js.js",
+        "/templates/standard/index.js"
+      ],
+      "css": [
+        "/assets_components_navigations_header_mobile_styles_pcss-assets_components_navigations_header_-6c1c97.css"
+      ]
+    },
+    "editor": {
+      "js": [
+        "/runtime.js",
+        "/editor.js"
+      ],
+      "css": [
+        "/editor.css"
+      ]
+    }
+  }
+}

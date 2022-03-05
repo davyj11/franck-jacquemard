@@ -1,0 +1,36 @@
+.card-review {
+
+    display: flex;
+
+    height: 100%;
+
+    flex-direction: column;
+
+    border-width: 1px;
+
+    --tw-border-opacity: 1;
+
+    border-color: rgb(19 56 92 / var(--tw-border-opacity));
+
+    --tw-bg-opacity: 1;
+
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+
+    padding: 1.5rem
+}
+
+@media (min-width: 1024px) {
+
+    .card-review {
+
+        padding: 2.5rem
+    }
+}
+
+    .card-review .rating__icon + i {
+
+    margin-left: 0.5rem
+}
+
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiY29tcG9uZW50cy9jYXJkcy90ZXN0aW1vbnkvaW5kZXguY3NzIiwibWFwcGluZ3MiOiJBQUFBOztJQUFBOztJQUFBOztJQUFBOztJQUFBOztJQUFBOztJQUFBOztJQUFBOztJQUFBOztJQUFBO0NBQUE7O0FBQUE7O0lBQUE7O1FBQUE7S0FBQTtDQUFBOztJQUFBOztJQUFBO0NBQUEiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vPG5vIHNvdXJjZT4iXSwibmFtZXMiOltdLCJzb3VyY2VSb290IjoiIn0=*/
