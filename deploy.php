@@ -38,6 +38,10 @@ set('repository', 'git@github.com:{{repository_name}}.git');
 set('git_tty', false);
 set('git_cache', true);
 
+set('http_user', 'www-data');
+set('writable_mode', 'chmod');
+set('use_relative_symlink', '0');
+
 // Shared files/dirs between deploys
 set('shared_dirs', [
     'web/app/uploads',
@@ -123,23 +127,6 @@ host('prod')
  *
  **************************************************/
 
-task('npm:build', function () {
-    $cmd = "cd {{release_path}}/web/app/themes/fj_theme && {{bin/npm}} run build:production";
-    if (get("export_node_path")) {
-        $cmd = 'export PATH={{node_path}}:$PATH && ' . $cmd;
-    }
-    run($cmd);
-});
-
-
-task('npm:install', function () {
-    if (has('previous_release')) {
-        if (test('[ -d {{previous_release}}/web/app/themes/fj_theme/node_modules]')) {
-            run('cp -R {{previous_release}}/web/app/themes/fj_theme/node_modules {{release_path}}/web/app/themes/fj_theme');
-        }
-    }
-    run('cd {{release_path}}/web/app/themes/fj_theme && {{bin/npm}} install');
-});
 
 task('dotenv:set-env', function () {
     run('touch {{release_path}}/.env.local');
@@ -149,9 +136,6 @@ task('dotenv:set-env', function () {
 after('dotenv:prepare', 'dotenv:set-env');
 after('deploy:update_code', 'deploy:vendors');
 
-
-after('deploy:update_code', 'npm:install');
-after('npm:install', 'npm:build');
 
 // Run Sentry task
 //after('deploy', 'deploy:sentry');
