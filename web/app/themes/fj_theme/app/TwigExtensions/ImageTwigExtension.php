@@ -24,7 +24,7 @@ class ImageTwigExtension extends AbstractExtension
         return $twig;
     }
 
-    public static function handle($image, $size, $customClass = '', $customAlt = true)
+    public static function handle($image, $size, $customClass = '', $customAlt = true, $loading= true)
     {
 
         $imageID = is_array($image) ? $image['ID'] : $image;
@@ -39,6 +39,10 @@ class ImageTwigExtension extends AbstractExtension
             $nameBeautified = ucwords(str_replace('-', ' ', $image['name']));
 
             $attr['alt'] = $image['alt'] != "" ? $image['alt'] : $nameBeautified;
+        }
+
+        if (!$loading) {
+            $attr['loading'] = false;
         }
 
         return wp_get_attachment_image($imageID, $size, false, $attr);
