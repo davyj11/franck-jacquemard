@@ -69,5 +69,6 @@
   "build/images/admin/gutenberg-blocks/small-text/icon.svg": "/images/admin/gutenberg-blocks/small-text/icon.834ca10d.svg",
   "build/images/admin/gutenberg-blocks/wysiwyg/icon.svg": "/images/admin/gutenberg-blocks/wysiwyg/icon.834ca10d.svg",
   "build/images/admin/gutenberg-blocks/title-text/icon.svg": "/images/admin/gutenberg-blocks/title-text/icon.c5cf9509.svg",
-  "build/images/admin/gutenberg-blocks/image-full/icon.svg": "/images/admin/gutenberg-blocks/image-full/icon.75ffba87.svg"
+  "build/images/admin/gutenberg-blocks/image-full/icon.svg": "/images/admin/gutenberg-blocks/image-full/icon.75ffba87.svg",
+  "build/vendors-node_modules_fslightbox_index_js-node_modules_masonry-layout_masonry_js.js": "/vendors-node_modules_fslightbox_index_js-node_modules_masonry-layout_masonry_js.js"
 }

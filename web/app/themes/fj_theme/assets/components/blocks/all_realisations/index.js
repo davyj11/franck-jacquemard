@@ -1,5 +1,6 @@
 
 import Masonry from 'masonry-layout';
+import FsLightbox from 'fslightbox'
 
 
     const masonry = document.querySelector('[js-masonry]');
