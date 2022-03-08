@@ -61,7 +61,7 @@ class IntroBeforeAfterBlock extends AbstractBlock
             ->returnFormat('array')
             ->required();
 
-        yield Image::make(__("Image avant"), "img_after")
+        yield Image::make(__("Image après"), "img_after")
             ->library("all")
             ->previewSize("medium")
             ->returnFormat('array')
