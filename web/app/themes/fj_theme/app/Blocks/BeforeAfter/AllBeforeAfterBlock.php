@@ -55,7 +55,7 @@ class AllBeforeAfterBlock extends AbstractBlock
                     ->returnFormat('array')
                     ->required(),
 
-                Image::make(__("Image avant"), "img_after")
+                Image::make(__("Image après"), "img_after")
                     ->library("all")
                     ->previewSize("medium")
                     ->returnFormat('array')
