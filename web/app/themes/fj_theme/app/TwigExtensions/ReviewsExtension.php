@@ -25,7 +25,7 @@ class ReviewsExtension extends AbstractExtension
     public static function getAllReviews()
     {
 
-        $lastReviews = Testimony::builder()->get();
+        $lastReviews = Testimony::builder()->limit(-1)->get();
 
 
         return $lastReviews;
