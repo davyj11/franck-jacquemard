@@ -16,16 +16,18 @@
         </div>
        #}
         <div class="masonry" js-masonry>
-            <div class="sizer w-1/4" js-sizer></div>
+            <div class="sizer w-1/2 lg:w-1/4" js-sizer></div>
             {% for img in fields.gallery %}
                 {% if img.width > img.height %}
-                    {% set width = 'w-[50%]' %}
+                    {% set width = 'w-full lg:w-1/2' %}
 
                     {% else %}
-                        {% set width = 'w-[25%]' %}
+                        {% set width = 'w-1/2 lg:w-1/4' %}
                 {% endif %}
                 <div class="w-img p-2 {{ width }}" js-masonry-item>
+                    <a href="{{ img.url }}" data-fslightbox="realisations">
                     {{ image(img, 'large') }}
+                    </a>
                 </div>
             {% endfor %}
         </div>

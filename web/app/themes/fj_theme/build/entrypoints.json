@@ -22,7 +22,7 @@
     "components/blocks/all_realisations/index": {
       "js": [
         "/runtime.js",
-        "/vendors-node_modules_masonry-layout_masonry_js.js",
+        "/vendors-node_modules_fslightbox_index_js-node_modules_masonry-layout_masonry_js.js",
         "/components/blocks/all_realisations/index.js"
       ]
     },
