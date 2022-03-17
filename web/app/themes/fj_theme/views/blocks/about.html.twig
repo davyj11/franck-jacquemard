@@ -3,7 +3,7 @@
 <section class="flex-about p-default relative xl:max-w-[1560px] xl:mx-auto">
     <div class="top relative max-lg:flex max-lg:flex-col-reverse">
         <div class="top__img max-lg:relative max-lg:h-80 max-lg:mt-10 max-lg:w-full lg:w-[47%] lg:h-full lg:absolute lg:top-0 lg:left-0">
-            {{ image(fields.img_top, 'large', 'cover-full') }}
+            {{ image(fields.img_top, 'full', 'cover-full') }}
         </div>
         <div class="container">
             <div class="top__inner lg:grid lg:grid-cols-12">
@@ -35,7 +35,7 @@
 
     <div class="bottom relative lg:flex lg:items-center lg:-mt-20">
         <div class="container">
-            <div class="bottom__text flex items-center max-sm:flex-col max-lg:justify-center max-lg:mt-10 lg:pt-40 lg:pb-20">
+            <div class="bottom__text flex items-center max-sm:flex-col max-lg:justify-center max-lg:mt-10 lg:pt-60 lg:pb-40">
                 {% if fields.number1 %}
                     <div class="group text-center max-w-[160px]">
                         <div class="xl5">{{ fields.number1.value }}</div>
