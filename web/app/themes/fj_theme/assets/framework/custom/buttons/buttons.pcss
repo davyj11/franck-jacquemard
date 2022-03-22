@@ -2,6 +2,8 @@
     .btn-primary {
         @apply h-[40px];
         @apply relative inline-block;
+        @apply overflow-hidden;
+        @apply flex-none;
         @apply bg-primary;
         @apply leading-[40px];
         @apply px-4;
@@ -9,9 +11,27 @@
         @apply text-primary-white;
         @apply font-bold font-text text-base;
         @apply transition-colors;
-        @apply md:hover:bg-secondary;
         @apply dark:bg-secondary-dark;
-        @apply md:hover:dark:bg-secondary;
+
+        .btn-inner {
+            z-index: 1;
+            @apply relative;
+        }
+
+        @screen lg {
+            &:before {
+                content: "";
+                @apply absolute w-full h-full top-0 left-0 bg-secondary;
+                @apply -translate-x-full;
+                @apply transition-transform;
+            }
+
+            &:hover {
+                &:before {
+                    @apply translate-x-0;
+                }
+            }
+        }
     }
 
     .btn-secondary {
