@@ -46,6 +46,7 @@ class AllRealisationsBlock extends AbstractBlock
 
     protected function registerFields(): \Traversable
     {
+        yield Text::make(__('Titre'), 'title');
         yield Gallery::make(__("Gallerie d'images"), "gallery")
             ->mimeTypes(['jpg', 'jpeg', 'png'])
             ->min(10)
