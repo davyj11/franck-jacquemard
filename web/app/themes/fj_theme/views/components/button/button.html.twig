@@ -128,7 +128,13 @@
                 {{ attributes|join(' ')|raw  }}
                 {% if settings.customIcon %} style="--icon: var(--{{ settings.customIcon }})" {% endif %}>
 
+            {% if settings.type == 'primary' %}
+                <span class="btn-inner">
+            {% endif %}
             {{ settings.title }}
+                    {% if settings.type == 'primary' %}
+                </span>
+            {% endif %}
         </a>
     {% endif %}
 

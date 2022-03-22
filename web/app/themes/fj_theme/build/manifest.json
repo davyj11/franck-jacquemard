@@ -69,5 +69,7 @@
   "build/images/admin/gutenberg-blocks/small-text/icon.svg": "/images/admin/gutenberg-blocks/small-text/icon.834ca10d.svg",
   "build/images/admin/gutenberg-blocks/wysiwyg/icon.svg": "/images/admin/gutenberg-blocks/wysiwyg/icon.834ca10d.svg",
   "build/images/admin/gutenberg-blocks/title-text/icon.svg": "/images/admin/gutenberg-blocks/title-text/icon.c5cf9509.svg",
-  "build/images/admin/gutenberg-blocks/image-full/icon.svg": "/images/admin/gutenberg-blocks/image-full/icon.75ffba87.svg"
+  "build/images/admin/gutenberg-blocks/image-full/icon.svg": "/images/admin/gutenberg-blocks/image-full/icon.75ffba87.svg",
+  "build/components/navigations/header/index.css": "/components/navigations/header/index.css",
+  "build/templates/standard/index.css": "/templates/standard/index.css"
 }
