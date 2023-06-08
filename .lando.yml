@@ -1,0 +1,24 @@
+name: franck-jacquemard
+recipe: lamp
+config:
+  php: "7.4"
+  composer_version: "2"
+  database: mariadb:10.4
+  webroot: web
+
+services:
+  pma:
+    type: phpmyadmin
+  database:
+    portforward: 61460
+  mailhog:
+    type: mailhog
+    hogfrom:
+      - appserver
+
+tooling:
+  wp:
+    service: appserver
+  deployer:
+    service: appserver
+    cmd: ./dep

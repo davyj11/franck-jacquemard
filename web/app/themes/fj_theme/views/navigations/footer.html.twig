@@ -37,7 +37,7 @@
 
         </div>
         <div class="footer-bottom py-6 border-t border-gray-03 flex flex-col items-center lg:flex-row lg:justify-between">
-            <ul class="footer-bottom__links flex flex-col items-center sm:flex-row">
+            <ul class="footer-bottom__links flex flex-col items-center md:flex-row">
                 <li class="footer-bottom__link">
                     <a href="{{ fn('get_permalink', const_pages.legals.ID) }}" class="link">{{ const_pages.legals.post_title }}</a>
                 </li>
@@ -47,9 +47,13 @@
                 <li class="footer__link">
                     <a href="{{ fn('get_permalink', const_pages.sitemap.ID) }}" class="link">{{ const_pages.sitemap.post_title }}</a>
                 </li>
+
             </ul>
             <span
                 class="p-s max-lg:mt-6 copyright copyright--society">{{ __('Tous droits réservés Jacquemard SARL', '') }} {{ "now"|date("Y") }}</span>
+        </div>
+        <div class="pb-6">
+            <a href="https://www.davyjacquemard.com/" rel="nofollow" target="_blank" class="link text-center block mx-auto">Site réalisé par Davy Jacquemard</a>
         </div>
     </div>
 </footer>

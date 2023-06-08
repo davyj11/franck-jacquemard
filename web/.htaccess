@@ -61,7 +61,6 @@ ExpiresByType image/x-icon "access plus 1 week"
 </IfModule>
 
 # En-têtes
-Header unset ETag
 FileETag None
 
 <IfModule mod_headers.c>
@@ -79,15 +78,6 @@ FileETag None
 </FilesMatch>
 </IfModule>
 
-# Compressions des fichiers statiques
-<IfModule mod_deflate.c>
-    AddOutputFilterByType DEFLATE text/xhtml text/html text/plain text/xml text/javascript application/x-javascript text/css
-    BrowserMatch ^Mozilla/4 gzip-only-text/html
-    BrowserMatch ^Mozilla/4\.0[678] no-gzip
-    BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
-    SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png)$ no-gzip dont-vary
-    Header append Vary User-Agent env=!dont-vary
-</IfModule>
 
 AddOutputFilterByType DEFLATE text/html
 AddOutputFilterByType DEFLATE text/plain
