@@ -1,29 +1,29 @@
 {% macro _button(settings = {}) %}
 
-    {# Tag Enum #}
-    {% set tags = {
+	{# Tag Enum #}
+	{% set tags = {
         a: 'a',
         button: 'button'
     } %}
 
-    {# Types Enum #}
-    {% set types = {
-        primary: 'btn-primary',
-        secondary: 'btn-secondary',
+	{# Types Enum #}
+	{% set types = {
+        primary: 'btn btn-primary',
+        secondary: ' btn btn-secondary',
     } %}
 
-    {# Variants Enum #}
-    {% set variants = {
+	{# Variants Enum #}
+	{% set variants = {
         big: 'btn-big',
     } %}
 
-    {# attributes Enum #}
-    {% set attributesEnum = {
+	{# attributes Enum #}
+	{% set attributesEnum = {
         addCart: 'js-cart-add'
     } %}
 
-    {# Default Settings #}
-    {% set defaultSettings = {
+	{# Default Settings #}
+	{% set defaultSettings = {
         button: null,
         tag: "a",
         title: "",
@@ -38,104 +38,80 @@
         id:false,
     } %}
 
-    {% set settings = defaultSettings|merge(settings) %}
+	{% set settings = defaultSettings|merge(settings) %}
 
-    {% set classes = [settings.classes, types[settings.type]] %}
+	{% set classes = [settings.classes, types[settings.type]] %}
 
-    {% set attributes = [] %}
+	{% set attributes = [] %}
 
-    {# Handle variants #}
-    {% if settings.tag %}
-        {% set tag = settings.tag %}
-    {% endif %}
+	{# Handle variants #}
+	{% if settings.tag %}
+		{% set tag = settings.tag %}
+	{% endif %}
 
-    {% if settings.icon %}
-        {% set classes = classes|merge([variants.icon]) %}
-    {% endif %}
+	{% if settings.icon %}
+		{% set classes = classes|merge([variants.icon]) %}
+	{% endif %}
 
-    {% if settings.leadingIcon %}
-        {% set classes = classes|merge([variants.leadingIcon]) %}
-    {% endif %}
+	{% if settings.leadingIcon %}
+		{% set classes = classes|merge([variants.leadingIcon]) %}
+	{% endif %}
 
-    {% if settings.big %}
-        {% set classes = classes|merge([variants.big]) %}
-    {% endif %}
+	{% if settings.big %}
+		{% set classes = classes|merge([variants.big]) %}
+	{% endif %}
 
-    {% if settings.white %}
-        {% set classes = classes|merge([variants.white]) %}
-    {% endif %}
+	{% if settings.white %}
+		{% set classes = classes|merge([variants.white]) %}
+	{% endif %}
 
-    {% if settings.black %}
-        {% set classes = classes|merge([variants.black]) %}
-    {% endif %}
+	{% if settings.black %}
+		{% set classes = classes|merge([variants.black]) %}
+	{% endif %}
 
-    {% if settings.buyColor %}
-        {% set classes = classes|merge([variants.buyColor]) %}
-    {% endif %}
+	{% if settings.buyColor %}
+		{% set classes = classes|merge([variants.buyColor]) %}
+	{% endif %}
 
-{#    {% if settings.disabled %}#}
-{#        {% set classes = classes|merge([types[settings.type] ~ '--disabled']) %}#}
-{#    {% endif %}#}
+	{#    {% if settings.disabled %}#}
+	{#        {% set classes = classes|merge([types[settings.type] ~ '--disabled']) %}#}
+	{#    {% endif %}#}
 
-    {# Handle add to cart #}
-    {% if settings.addCart %}
-        {% set classes = classes|merge([variants.addCart]) %}
-        {% set attributes = attributes|merge([attributesEnum.addCart]) %}
-    {% endif %}
+	{# Handle add to cart #}
+		{% if settings.addCart %}
+		{% set classes = classes|merge([variants.addCart]) %}
+	{% set attributes = attributes|merge([attributesEnum.addCart]) %}
+	{% endif %}
 
-    {# Handle attributes #}
-    {% if settings.attributes %}
-        {% set attributes = attributes|merge(settings.attributes[0] is defined ? settings.attributes : [settings.attributes]) %}
-    {% endif %}
+	{# Handle attributes #}
+		{% if settings.attributes %}
+	{% set attributes = attributes|merge(settings.attributes[0] is defined ? settings.attributes : [settings.attributes]) %}
+	{% endif %}
 
-    {% if settings.button is not null %}
-        {% set settings = settings|merge({
+		{% if settings.button is not null %}
+	{% set settings = settings|merge({
             url: settings.button.link,
             title: settings.button.label,
             customIcon: settings.button.icon is defined ? settings.button.icon : '',
             action: settings.button.action is defined ? settings.button.action : '',
             actionParams: settings.button.actionParams is defined ? settings.button.actionParams : '',
         }) %}
-    {% endif %}
+	{% endif %}
 
-    {% if tag == "button" %}
-        <button
-                class="{{ classes|join(' ') }}"
-                {{ (settings.action and settings.action != 'openurl' ? ' @click.prevent.stop="clicked(\'%s\', %s)"'|format(settings.action, settings.actionParams|json_encode|e('html_attr') ) : '') | raw }}
-                {% if settings.actions %}
-                    {{ (settings.actions | filter(action => action != 'openurl') ? ' @click.prevent.stop="clicked(\'%s\', %s)"'|format(settings.actions|join(','), settings.actionParams|json_encode|e('html_attr') ) : '') | raw }}
-                {% endif %}
-                {{ attributes|join(' ') }}
-                {% if settings.disabled %} disabled {% endif %}
-                {% if settings.submit %} type="submit" {% else %} type="button" {% endif %}
-                {% if settings.customIcon %} style="--icon: var(--{{ settings.customIcon }})" {% endif %}
-        >
-            {{ settings.title }}
-        </button>
-    {% else %}
-        <a href="{{ settings.url }}"
-           target="{{ settings.target }}"
-                {{ settings.disabled ? 'disabled'}}
-           class="{{ classes|join(' ') }}"
+		{% if tag == "button" %}
+			<button class="{{ classes|join(' ') }}" {{ (settings.action and settings.action != 'openurl' ? ' @click.prevent.stop="clicked(\'%s\', %s)"'|format(settings.action, settings.actionParams|json_encode|e('html_attr') ) : '') | raw }} {% if settings.actions %} {{ (settings.actions | filter(action => action != 'openurl') ? ' @click.prevent.stop="clicked(\'%s\', %s)"'|format(settings.actions|join(','), settings.actionParams|json_encode|e('html_attr') ) : '') | raw }} {% endif %} {{ attributes|join(' ') }} {% if settings.disabled %} disabled {% endif %} {% if settings.submit %} type="submit" {% else %} type="button" {% endif %} {% if settings.customIcon %} style="--icon: var(--{{ settings.customIcon }})" {% endif %}> {{ settings.title }}
+		</button>
+	{% else %}
+		<a href="{{ settings.url }}" target="{{ settings.target }}" {{ settings.disabled ? 'disabled'}} class="{{ classes|join(' ') }}" {{ attributes|join(' ')|raw }} {% if settings.customIcon %} style="--icon: var(--{{ settings.customIcon }})" {% endif %} {% if settings.id %} id="{{ settings.id }}" {% endif %} {{ (settings.action and settings.action != 'openurl' ? ' @click.prevent.stop="clicked(\'%s\', %s)"'|format(settings.action, settings.actionParams|json_encode|e('html_attr') ) : '') | raw }} {% if settings.actions %} {{ (settings.actions | filter(action => action != 'openurl') ? ' @click.prevent.stop="clicked(\'%s\', %s)"'|format(settings.actions|join(','), settings.actionParams|json_encode|e('html_attr') ) : '') | raw }} {% endif %} {{ attributes|join(' ')|raw }} {% if settings.customIcon %} style="--icon: var(--{{ settings.customIcon }})" {% endif %}>
 
-                {{ attributes|join(' ')|raw  }}
-                {% if settings.customIcon %} style="--icon: var(--{{ settings.customIcon }})" {% endif %}
-                {% if settings.id %} id="{{ settings.id }}" {% endif %}
-                {{ (settings.action and settings.action != 'openurl' ? ' @click.prevent.stop="clicked(\'%s\', %s)"'|format(settings.action, settings.actionParams|json_encode|e('html_attr') ) : '') | raw }}
-                {% if settings.actions %}
-                    {{ (settings.actions | filter(action => action != 'openurl') ? ' @click.prevent.stop="clicked(\'%s\', %s)"'|format(settings.actions|join(','), settings.actionParams|json_encode|e('html_attr') ) : '') | raw }}
-                {% endif %}
-                {{ attributes|join(' ')|raw  }}
-                {% if settings.customIcon %} style="--icon: var(--{{ settings.customIcon }})" {% endif %}>
-
-            {% if settings.type == 'primary' %}
-                <span class="btn-inner">
-            {% endif %}
-            {{ settings.title }}
-                    {% if settings.type == 'primary' %}
-                </span>
-            {% endif %}
-        </a>
-    {% endif %}
+			{% if settings.type == 'primary' %}
+				<span class="btn-inner">
+				{% endif %}
+				{{ settings.title }}
+				{% if settings.type == 'primary' %}
+				</span>
+			{% endif %}
+		</a>
+	{% endif %}
 
 {% endmacro %}

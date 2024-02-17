@@ -1,50 +1,72 @@
 @layer components {
-    .wysiwyg{
-        &.big{
-            p{
+    .wysiwyg {
+        &.big {
+            p {
                 @apply p-md;
             }
         }
 
-        & > *:last-child{
+        & > *:last-child {
             @apply mb-0;
         }
 
-        p, ul, ol, table{
-            & + h2, + h3, +h4, + h5{
+        p,
+        ul,
+        ol,
+        table {
+            & + h2,
+            + h3,
+            + h4,
+            + h5 {
                 @apply mt-8;
             }
         }
 
-        h2{
-            & + h3, + h4, + h5{
+        h2 {
+            & + h3,
+            + h4,
+            + h5 {
                 @apply mt-2;
             }
         }
-        h3{
-            & + h2, + h4, + h5{
+        h3 {
+            & + h2,
+            + h4,
+            + h5 {
                 @apply mt-3;
             }
         }
-        h4{
-            & + h5, + h3, + h2{
+        h4 {
+            & + h5,
+            + h3,
+            + h2 {
                 @apply mt-2;
             }
         }
-        h5{
-            & + h4, + h3, + h2{
+        h5 {
+            & + h4,
+            + h3,
+            + h2 {
                 @apply mt-3;
             }
         }
 
-        h2, h3, h4, h5{
-            & + ul, + ol, + p, + table{
+        h2,
+        h3,
+        h4,
+        h5 {
+            & + ul,
+            + ol,
+            + p,
+            + table {
                 @apply mt-3 md:mt-5;
             }
         }
 
-        p{
-            & + ul, + ol, + table{
+        p {
+            & + ul,
+            + ol,
+            + table {
                 @apply mt-3;
             }
             & + p {
@@ -52,20 +74,22 @@
             }
         }
 
-        ul{
-            & + ul, + ol{
+        ul {
+            & + ul,
+            + ol {
                 @apply mt-3;
             }
-            & + p{
+            & + p {
                 @apply mt-5;
             }
         }
 
-        ol{
-            & + ol, + ul{
+        ol {
+            & + ol,
+            + ul {
                 @apply mt-3;
             }
-            & + p{
+            & + p {
                 @apply mt-5;
             }
         }
@@ -74,11 +98,11 @@
             @apply p;
         }
 
-        a {
-           @apply underline text-secondary transition-colors lg:hover:text-primary;
+        a:not(.btn) {
+            @apply underline text-secondary transition-colors lg:hover:text-primary;
         }
 
-        h1{
+        h1 {
             @apply xl6;
         }
 
@@ -98,15 +122,15 @@
             @apply xl2;
         }
 
-        ul{
+        ul {
             @apply bullet-list;
         }
 
-        ol{
+        ol {
             @apply number-list;
         }
 
-        hr{
+        hr {
             @apply hidden;
         }
 
@@ -114,19 +138,17 @@
             @apply mx-auto;
         }
 
-        b{
+        b {
             @apply font-semibold;
         }
 
-
-        .btn, & + .btn{
+        .btn,
+        & + .btn {
             @apply mt-4 lg:mt-10;
 
-
-            &.btn-icon{
-                @apply  mt-6;
+            &.btn-icon {
+                @apply mt-6;
             }
         }
-
     }
 }

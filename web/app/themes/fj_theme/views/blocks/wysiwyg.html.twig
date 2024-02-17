@@ -2,29 +2,29 @@
 
 <section class="p-default flex-wysiwyg {{ fields.bg }}">
 
-    <div class="container">
+	<div class="container">
 
-        <div class="wysiwyg lg:max-w-[80%] lg:mx-auto xl:max-w-[70%] {{ fields.text_centered ? 'text-center' }}">
-            {% if fields.title %}
-                <h2 class="h2">{{ fields.title }}</h2>
-            {% endif %}
+		<div class="wysiwyg lg:max-w-[80%] lg:mx-auto xl:max-w-[70%] {{ fields.text_centered ? 'text-center' }}">
+			{% if fields.title %}
+				<h2 class="h2">{{ fields.title }}</h2>
+			{% endif %}
 
-            {{ fields.text }}
+			{{ fields.text }}
 
-            {% set btn = fields.btn_link %}
+			{% set btn = fields.btn_link %}
 
-            {% if btn %}
-                {{ _button({
+			{% if btn %}
+				{{ _button({
                     classes: 'mt-8',
                     title: btn.title ?? 'En savoir plus',
                     url: btn.url,
                     target: btn.target,
                     type: "secondary"
                 }) }}
-            {% endif %}
+			{% endif %}
 
-        </div>
+		</div>
 
-    </div>
+	</div>
 
 </section>

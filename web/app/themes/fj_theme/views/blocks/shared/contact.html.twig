@@ -3,26 +3,26 @@
 {% set contactBloc = function('get_field', 'contact', 'option') %}
 
 <section class="bloc-contact relative">
-    <div class="container">
-        <div class="wrapper lg:grid lg:gap-6 lg:grid-cols-12">
-            <div class="bloc-contact__content py-10 lg:py-28 xl:py-36 lg:col-span-5">
-                <h2 class="xl5">{{ contactBloc.title }}</h2>
-                <div class="wysiwyg mt-4">
-                    {{ contactBloc.text }}
+	<div class="container">
+		<div class="wrapper lg:grid lg:gap-6 lg:grid-cols-12">
+			<div class="bloc-contact__content py-10 lg:py-28 xl:py-36 lg:col-span-5">
+				<h2 class="xl5">{{ contactBloc.title }}</h2>
+				<div class="wysiwyg mt-4">
+					{{ contactBloc.text }}
 
-                    {% if contactBloc.btn_link %}
-                        {{ _button({
+					{% if contactBloc.btn_link %}
+						{{ _button({
                             classes: 'mt-6 lg:mt-10',
                             title: contactBloc.btn_link.title ?? __('Lire plus'),
                             url: contactBloc.btn_link.url,
                             type: "primary"
                         }) }}
-                    {% endif %}
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="bloc-contact__image max-lg:container max-lg:relative max-lg:aspect-[100/66] lg:absolute lg:w-1/2 lg:h-full lg:right-0 lg:top-0">
-        {{ image(contactBloc.img, 'full', 'cover-full') }}
-    </div>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="bloc-contact__image max-lg:container max-lg:relative max-lg:aspect-[100/66] lg:absolute lg:w-1/2 lg:h-full lg:right-0 lg:top-0">
+		{{ image(contactBloc.img, 'full', 'cover-full') }}
+	</div>
 </section>
